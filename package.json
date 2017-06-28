@@ -1,0 +1,29 @@
+{
+  "name": "node_all",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node_demo1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hpstream/node_all.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hpstream/node_all/issues"
+  },
+  "homepage": "https://github.com/hpstream/node_all#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.1",
+    "jquery": "^3.2.1",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "html-entities": "^1.2.1",
+    "vue": "^2.3.4"
+  }
+}
