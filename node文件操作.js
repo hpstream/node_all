@@ -8,6 +8,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+
 //创建文件；
 // fs.writeFile(__dirname+"/1.txt","",function(err){
 //     if(err) throw err;
