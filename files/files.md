@@ -27,3 +27,16 @@
         
         main(process.argv.slice(2));
 ```
+
+3.文件的常用方法
+```$xslt
+ 1.创建目录
+  fs.mkdir(path,callback);
+  2.创建文件
+  fs.writeFile(path,callback)
+  3.删除目录(同步删除)
+    fs.rmdirSync(url);
+  4.删除文件（同步删除）
+   fs.unlinkSync(tempurl)
+
+```
