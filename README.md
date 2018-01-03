@@ -6,7 +6,7 @@
 
 * [全局变量](./)
     * [常用全局变量](./global/global.md)
-
+    * [os模块](./os/os.md)
 * [文件操作](./)
     * [文件拷贝](.file/files.md)
     * [文件的基本操作](./file/files.md)

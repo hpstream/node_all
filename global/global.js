@@ -51,3 +51,27 @@ console.log(process.argv) //可以拿到命令行输入的参数
  */
 
 
+process.chdir('../img') //切换目录
+process.cwd() //查看当前目录路径
+process.stdout.write('我要输出了\n');  //console 就是封装了stdout
+process.stderr.write('我出错了');
+process.stdout.setEncoding('utf8') //设置编码
+//获取用户的输入
+//process.stdin.read();
+process.exit(0) // 杀死程序内进程
+
+//监听进程的事件exit，uncaughtException
+
+process.on('exit',()=>{
+	console.log("I am tired...")
+})
+var tick = Date.now();
+console.log(tick);
+
+//参数err表示发生的异常
+process.on("uncaughtException",function(err){
+	console.log(err);
+});
+//故意抛出一个异常
+throw new Error("我故意的...");
+
