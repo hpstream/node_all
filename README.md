@@ -1,6 +1,5 @@
 
- ![image](./img/node.jpg)
-
+<img src='./img/node.jpg' width="300" height="300" style='text-align:center'/>
 
 # node 从入门到精通 #
  
