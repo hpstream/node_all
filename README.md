@@ -15,4 +15,9 @@
     * [文件的基本操作](./files/files.md)
     * [创建和删除目录和文件（递归删除目录）](https://github.com/hpstream/node_project/blob/master/config.js)
 * [url模块](/README.md)
-    * [基本方法的使用]
+    * [基本方法的使用](./url/url.md)
+    * [path模块的基本用法](./url/url.md)
+* [es6语法的介绍](/README.md)
+    * [Generator函数的介绍](./es6/es6.md)
+* [socket.io](/README.md)
+    * [搭建基本服务]
