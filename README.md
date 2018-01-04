@@ -8,6 +8,6 @@
     * [常用全局变量](./global/global.md)
     * [os模块](./os/os.md)
 * [文件操作](./)
-    * [文件拷贝](.file/files.md)
-    * [文件的基本操作](./file/files.md)
+    * [文件拷贝](./files/files.md)
+    * [文件的基本操作](./files/files.md)
     * [创建和删除目录和文件（递归删除）](https://github.com/hpstream/node_project/blob/master/config.js)
