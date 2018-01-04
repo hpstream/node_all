@@ -1,4 +1,6 @@
+<div align=center>
 ![image](./img/node.jpg)
+</div>
 
 #node 从入门到精通#
  
