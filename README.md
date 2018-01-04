@@ -10,4 +10,4 @@
 * [文件操作](./)
     * [文件拷贝](./files/files.md)
     * [文件的基本操作](./files/files.md)
-    * [创建和删除目录和文件（递归删除）](https://github.com/hpstream/node_project/blob/master/config.js)
+    * [创建和删除目录和文件（递归删除目录）](https://github.com/hpstream/node_project/blob/master/config.js)
