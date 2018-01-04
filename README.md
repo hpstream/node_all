@@ -1,6 +1,6 @@
-<div align='center'>
+
  ![image](./img/node.jpg)
-</div>
+
 
 #node 从入门到精通#
  
@@ -11,9 +11,9 @@
 * [全局变量](/README.md)
     * [常用全局变量](./global/global.md)
     * [os模块](./os/os.md)
-* [文件操作](/)
+* [文件操作](/README.md)
     * [文件拷贝](./files/files.md)
     * [文件的基本操作](./files/files.md)
     * [创建和删除目录和文件（递归删除目录）](https://github.com/hpstream/node_project/blob/master/config.js)
-* [url模块](/)
+* [url模块](/README.md)
     * [基本方法的使用]
