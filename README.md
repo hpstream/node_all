@@ -1,5 +1,5 @@
 
-<img src='./img/node.jpg' align='center'/>
+<img src='./img/node.jpg' align='middle'/>
 
 # node 从入门到精通 #
  
