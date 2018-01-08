@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="./js/socket.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	
+</head>
+<style>
+	.main{
+		width:600px;
+		margin: 0 auto;
+	}
+	.message{
+		padding:40px;
+		height:600px;
+		background: whitesmoke;
+	}
+</style>
+<body>
+ <div class="main" style="position: relative">
+	 <div class="count" style="position: absolute;z-index:100;"></div>
+	 <div class="message"></div>
+	 <div class="val">
+		 <input type="text" placeholder="请输入消息"><botton class="click">按钮</botton>
+	 </div>
+ </div>
+</body>
+<script>
+	$(function () {
+
+		var socket = io.connect('/?hp=123456');
+
+		socket.on('message',function(data){
+			//收到消息
+		console.log(data);
+			$('.count').text(`在线人数为${data.count}`)
+
+			if(data.info){
+				$('.message').append(`<div>${data.info}</div>`)
+			}
+		});
+		
+		$('.click').on('click',function () {
+			var text = $('input').val().trim();
+			if(text){
+				socket.send(text);
+			}else {
+				alert('输入为空')
+			}
+
+		})
+	})
+	
+</script>
+</html>
+
