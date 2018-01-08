@@ -23,21 +23,23 @@ io.on("connection", function(socket){
 	socket.send({count:clients.length});
 	socket.on('message',function(data){
 		//收到消息
-		for(var i=0;i<clients.length;i++){
-			clients[i].send({count:clients.length,info:data});
-		}
+		broadcast(data);
 
 	});
 	socket.on('disconnect',function () {
 		clients = clients.splice(clients.indexOf(socket), 1)
 		console.log(`${socket.id} 离开了`);
-
+		console.log(clients.length);
+		broadcast();
 
 	})
 });
 
-
-
+function broadcast(data){
+	for(var i=0;i<clients.length;i++){
+		clients[i].send({count:clients.length,info:data});
+	}
+}
 server.listen(80);
 
 
