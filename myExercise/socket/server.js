@@ -22,9 +22,10 @@ server.on('connection',(client) =>{
 	});
 });
 
-var port =30000;
+var port =30000; //端口设置为0可以任意分配一个未使用的端口
 server.listen(port,(err) =>{
 	if(err) throw err;
+	//client.address();  //可以拿到端口号，ip地址
 	console.log(port+"服务正在被使用。");
 })
 
@@ -56,7 +57,7 @@ function boardcast(client,chunk) {
 		}
 	}
 }
-
+//暂时未做
 function p2p() {
 
 }
