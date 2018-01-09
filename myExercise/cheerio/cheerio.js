@@ -33,7 +33,7 @@ http.get(url,function (res) {
 			}
 		}
 
-		fs.writeFile(path.join(__dirname,'./1.html'),html,function (err,data) {
+		fs.writeFile(path.join(__dirname,'./2.html'),html,function (err,data) {
 			console.log('写入完成');
 		})
 	})
