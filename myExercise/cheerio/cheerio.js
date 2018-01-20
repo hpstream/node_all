@@ -7,7 +7,7 @@ var http = require('http');
 var cheerio = require('cheerio'); //引入爬虫模块
 var fs = require('fs');
 var path = require('path');
-var url = 'http://www.hubwiz.com/course/5437538a032c781670afddbe/';
+var url = 'http://www.hubwiz.com/api/table?';
 var getData = {}
 http.get(url,function (res) {
 	var html = '';
