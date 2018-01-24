@@ -26,6 +26,8 @@
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
     "html-entities": "^1.2.1",
+    "open": "0.0.5",
+    "showdown": "^1.8.6",
     "vue": "^2.3.4"
   }
 }

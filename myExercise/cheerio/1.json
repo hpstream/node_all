@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>jQuery - 汇智网</title>
+    <meta charset="utf-8">
+    <!--极速模式-->
+    <meta name="renderer" content="webkit">
+    <!--支持IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--支持移动设备,禁用缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="jQuery 教程,jQuery,jQuery 入门到精通,jQuery 选择器,jQuery Api,jQuery DOM 元素,jQuery Ajax">
+    <meta name="description" content="jQuery 教程   jQuery 是一个轻量级的 JavaScript 库 ， jQuery 简化了 JavaScript 编程。它兼容CSS 3，jQuery2.0 后续不支持IE6-8。jQuery课程从入门到精通讲解jQuery搭建，各种 API 选择器如过滤表单，操作 DOM 元素如属性样式遍历，事件与应用如绑定触发焦点，动画特效如显示隐藏淡入淡出，Ajax使用，如何自定义插件。">
+    
+    <link rel="stylesheet" href="/stylesheets/course.min.css">
+    
+    <link rel="stylesheet" href="http://premium.hubwiz.com/dist/donate.min.css">
+</head>
+<body data-id="5437538a032c781670afddbe" style="background-color: #108a93;" class="course-pane">
+
+<header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+                <img src="/images/logo.png" alt="汇智网欢迎你！">
+            </a>
+        </div>
+        <nav id="hb-nav" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><a href="/course/">课程中心</a></li>
+                <li><a href="/books">互动图书</a></li>
+                <li><a href="/video">视频资料</a></li>
+                <li><a href="http://man.hubwiz.com/">API手册</a></li>
+                <li><a href="/exchange">讨论交流</a></li>
+                <li><a href="http://premium.hubwiz.com/">会员服务</a></li>
+                <li><a href="/biz">商务合作</a></li>
+                
+            </ul>
+            <ul class="nav navbar-nav navbar-right profile">
+                
+                <li><a href="/login"><i class="fa fa-sign-in"></i> 登录 </a></li>
+                <li><a href="/register"><i class="fa fa-pencil"></i> 注册</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container-fluid container-bg">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6"></div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+<div class="container container-desc">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="bb">
+                <i class="iconfont icon-jquery"></i>
+            </div>
+        </div>
+        <div class="col-md-6 desc">
+            <h3>
+               jQuery 
+               <a href="http://cw.hubwiz.com/card/c/5437538a032c781670afddbe/" class="btn btn-default btn-xs">
+                 <i class="fa fa-book"></i> 只读版
+                 </a>
+            </h3>
+
+            <p>jQuery 教程   jQuery 是一个轻量级的 JavaScript 库 ， jQuery 简化了 JavaScript 编程。它兼容CSS 3，jQuery2.0 后续不支持IE6-8。jQuery课程从入门到精通讲解jQuery搭建，各种 API 选择器如过滤表单，操作 DOM 元素如属性样式遍历，事件与应用如绑定触发焦点，动画特效如显示隐藏淡入淡出，Ajax使用，如何自定义插件。</p>
+
+            <div class="caption">
+                <div class="btn-group" role="group">
+                    <button disabled style="cursor: auto;" type="button" class="btn btn-default btn-sm">
+                        <i class="glyphicon glyphicon-user"></i> 学习
+                    </button>
+                    <span class="input-group-addon">
+                       8825
+                    </span>
+                </div>
+                
+                <div class="btn-group" role="group">
+                    <button id="recommend" data-value="undefined" title="课程不错，鼓励一下！" type="button"
+                            class="btn btn-success btn-sm disabled">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                        推荐
+                    </button>
+                    <span class="input-group-addon">57</span>
+                </div>
+                <div class="btn-group">
+                  <button class="btn btn-default btn-sm donate-hubwiz" style="min-width:100px;box-shadow:none;">
+                  <i class="glyphicon glyphicon-yen"> </i>
+                   <b>赞助</b>
+                  </button>
+                </div>
+                <div id="share" class="bdsharebuttonbox share">
+                    <a href="#" class="iconfont icon-qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a href="#" class="iconfont icon-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a href="#" class="iconfont icon-qqweibo" data-cmd="tqq" title="分享到腾讯微博"></a>
+                    <a href="#" class="iconfont icon-renren" data-cmd="renren" title="分享到人人网"></a>
+                    <a href="#" class="iconfont icon-weixin" data-cmd="weixin" title="分享到微信"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 avatar">
+            <div style="float: left;">
+                <a href="/personal/53b614ca8300a3322e101ad2">
+                    <img title="了解更多作者信息。" src="/avatar/53b614ca8300a3322e101ad2.jpg" class="thumbnail"
+                         alt="芒果">
+                </a>
+            </div>
+            <div>
+                <a href="/personal/53b614ca8300a3322e101ad2">芒果</a>
+                <button data-id="53b614ca8300a3322e101ad2" data-value="undefined" id="fans" title="关注作者，掌握课程动态。"
+                        type="button" class="btn btn-default btn-sm disabled">
+                    <i class="glyphicon glyphicon-heart"></i>
+                    关注
+                </button>
+                <a title="将你的意见或建议告诉作者。" href="/message?to=芒果" class="btn btn-info btn-sm disabled">
+                    <i class="glyphicon glyphicon-envelope"></i>
+                    私信
+                </a>
+            </div>
+            <p style="clear: both;text-indent: 2em;color: #b9c8e0;">
+                爱生活，爱编程。 课程中有问题请私信给我。也可以加上我们的官方QQ群一起学习交流。344353055，275985321，248575438......
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container container-menu">
+    <div class="row" style="margin-bottom: 150px;">
+        <div id="menu" class="col-md-8">
+
+            <div style="background: url(http://7xk7h3.com2.z0.glb.qiniucdn.com/index!banner2.jpg);padding:30px;margin:0 0 15px 0;font-weight:bold;font-size:1.2em;background-position: -300px;color: white;">
+               <p>小白零基础？自学有困难？需要老师带？</p>
+               <p>
+                 快来报名
+                 <a target="_blank" 
+                    href="//shang.qq.com/wpa/qunwpa?idkey=e3e70cb926981f88cd2e4e7a0bdfd8f05fff925a839302449cea6b1dcb756615"
+                    style="color:red;">汇智网辅导班</a>，
+                 和老师一起制定属于自己的学习计划！
+               </p>
+               <div class="clearfix">    
+                 <a target="_blank" 
+                    href="//shang.qq.com/wpa/qunwpa?idkey=e3e70cb926981f88cd2e4e7a0bdfd8f05fff925a839302449cea6b1dcb756615" 
+                    class="btn btn-danger pull-right" 
+                    style="background: #ff5722;">
+                  立刻咨询
+                 </a>
+               </div>
+            </div>
+            
+            
+            <div class="tabbable-panel">
+                <div class="tabbable-line">
+                    <ul class="nav nav-tabs ">
+                        <li id="one-publish" class="active">
+                            <a href="#paneOne" data-toggle="tab">
+                                课程目录 </a>
+                        </li>
+                        <li id="two-publish" class="">
+                            <a href="#paneTwo" data-toggle="tab">
+                                课程评论
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <!-- 课程目录 -->
+                        <div class="tab-pane active" id="paneOne">
+                            <div class="panel-group" id="accordion" aria-multiselectable="true">
+                                
+                                
+                                
+                                
+                                <div class="panel panel-default lock">
+                                    <div class="panel-heading" data-parent="#accordion">
+                                        <h4 class="panel-title">什么是jQuery
+                                            <button class="btn btn-success pull-right play">
+                                                <span class="glyphicon glyphicon-play"></span>
+                                            </button>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <ol class="list-group">
+                                                
+                                                <li class="list-group-item">
+                                                    1. jQuery 搭建开发环境
+                                                </li>
+                                                
+                                                <li class="list-group-item">
+                                                    2. jQuery 语法形式
+                                                </li>
+                                                
+                                                <li class="list-group-item">
+                                                    3. hello world
+                                                </li>
+                                                
+                                                <li class="list-group-item">
+                                                    4. jQuery 优势
+                                                </li>
+                                                
+                                                <li class="list-group-item">
+                                                    5. 小节
+                                                </li>
+                                                
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                <div class="panel panel-default lock">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            jQuery 选择器的使用
+                                            <span class="glyphicon glyphicon-lock pull-right"></span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                <div class="panel panel-default lock">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            jQuery 操作DOM元素
+                                            <span class="glyphicon glyphicon-lock pull-right"></span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                <div class="panel panel-default lock">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            jQuery 事件和应用
+                                            <span class="glyphicon glyphicon-lock pull-right"></span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                <div class="panel panel-default lock">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            jQuery 动画与特效
+                                            <span class="glyphicon glyphicon-lock pull-right"></span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                <div class="panel panel-default lock">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            jQuery Ajax的使用
+                                            <span class="glyphicon glyphicon-lock pull-right"></span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                <div class="panel panel-default lock">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            jQuery 自定义插件
+                                            <span class="glyphicon glyphicon-lock pull-right"></span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        <!-- 课程评论 -->
+                        <div class="tab-pane" id="paneTwo">
+                            
+                            <div class="comment-form-unlogin">
+                                <a href="/login">登录</a> 之后才能评论
+                            </div>
+                            
+                            <div class="comment-title">最新评论</div>
+                            <div class="comment-list" id="page-publish">
+                                
+                                <div class="row comment-list-item">
+                                    <div class="col-md-1 col-xs-2 col-sm-2 comment-item-author">
+                                        <a href="#" target="_blank">
+                                            <img class="img-avatar" src="http://q.qlogo.cn/qqapp/101161717/1F788827800474016CD4DE12663DB83E/100"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-11 col-xs-9 .col-sm-10 comment-item-body">
+                                        <div class="comment-item-name">
+                                            <a class="comment-item-current-author" href="/personal/572ddf1d2a3823231947a7df">
+                                                安小白
+                                            </a>
+                                            <span class="comment-item-date">495天前回复</span>
+                                        </div>
+                                        <div class="comment-item-content">非常好，感谢汇智网（PS:一起学习QQ2548836176 本人妹子刚刚入坑 ）</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row comment-list-item">
+                                    <div class="col-md-1 col-xs-2 col-sm-2 comment-item-author">
+                                        <a href="#" target="_blank">
+                                            <img class="img-avatar" src="http://q.qlogo.cn/qqapp/101161717/7C78F6741087BEB1F5C201E7BF0D75AF/100"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-11 col-xs-9 .col-sm-10 comment-item-body">
+                                        <div class="comment-item-name">
+                                            <a class="comment-item-current-author" href="/personal/56ee1c4cda70671f02504735">
+                                                魂淡狂人
+                                            </a>
+                                            <span class="comment-item-date">651天前回复</span>
+                                        </div>
+                                        <div class="comment-item-content">的确不错！</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row comment-list-item">
+                                    <div class="col-md-1 col-xs-2 col-sm-2 comment-item-author">
+                                        <a href="#" target="_blank">
+                                            <img class="img-avatar" src="http://q.qlogo.cn/qqapp/101161717/65E57694798F8AAB320EFF5E4872FEF0/100"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-11 col-xs-9 .col-sm-10 comment-item-body">
+                                        <div class="comment-item-name">
+                                            <a class="comment-item-current-author" href="/personal/56c13257da70671f02503b18">
+                                                zhongyd
+                                            </a>
+                                            <span class="comment-item-date">691天前回复</span>
+                                        </div>
+                                        <div class="comment-item-content">非常棒！！！！！！</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row comment-list-item">
+                                    <div class="col-md-1 col-xs-2 col-sm-2 comment-item-author">
+                                        <a href="#" target="_blank">
+                                            <img class="img-avatar" src="/avatar/man.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-11 col-xs-9 .col-sm-10 comment-item-body">
+                                        <div class="comment-item-name">
+                                            <a class="comment-item-current-author" href="/personal/56a720a73b64224e694d7207">
+                                                876071070@qq.com
+                                            </a>
+                                            <span class="comment-item-date">714天前回复</span>
+                                        </div>
+                                        <div class="comment-item-content">文章太好了</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row comment-list-item">
+                                    <div class="col-md-1 col-xs-2 col-sm-2 comment-item-author">
+                                        <a href="#" target="_blank">
+                                            <img class="img-avatar" src="http://q.qlogo.cn/qqapp/101161717/7DC46841FCF8F81E07434B86B733B267/100"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-11 col-xs-9 .col-sm-10 comment-item-body">
+                                        <div class="comment-item-name">
+                                            <a class="comment-item-current-author" href="/personal/5642df218faa3c940be02af9">
+                                                初心者
+                                            </a>
+                                            <span class="comment-item-date">790天前回复</span>
+                                        </div>
+                                        <div class="comment-item-content">有用的，我必须支持</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <!-- 评论分页 -->
+                            <div class="pagination-container">
+                                <ul class="pagination" id="pagination"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"><i class="glyphicon glyphicon-heart-empty"></i> 推荐课程</div>
+                <div class="panel-body hotCourse">
+                    
+                    <a href="../549a704f88dba0136c371703">
+                        <div class="media">
+                            <div class="media-left text-center">
+                                <img style="border: 1px solid #ddd;width: 120px;" class="media-object"
+                                     src="http://7xk83p.com2.z0.glb.qiniucdn.com/logo!549a704f88dba0136c371703.png"
+                                     alt="小电商项目实战">
+                                <h6 class="media-heading">小电商项目实战</h6>
+                            </div>
+                            <div class="media-body">
+                                <p>
+                                    本课程带领大家实现一个简单的用户购物电商网站，使用nodejs + mongod......
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <hr/>
+                    
+                    <a href="../54b86d6988dba00138405a10">
+                        <div class="media">
+                            <div class="media-left text-center">
+                                <img style="border: 1px solid #ddd;width: 120px;" class="media-object"
+                                     src="http://7xk83p.com2.z0.glb.qiniucdn.com/logo!54b86d6988dba00138405a10.png"
+                                     alt="C语言基础(一)">
+                                <h6 class="media-heading">C语言基础(一)</h6>
+                            </div>
+                            <div class="media-body">
+                                <p>
+                                    C语言是一门通用计算机编程语言，应用广泛。C语言的设计目标是提供一种能以简易的方......
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <hr/>
+                    
+                    <a href="../54bdfcb188dba012b4b95c9c">
+                        <div class="media">
+                            <div class="media-left text-center">
+                                <img style="border: 1px solid #ddd;width: 120px;" class="media-object"
+                                     src="http://7xk83p.com2.z0.glb.qiniucdn.com/logo!54bdfcb188dba012b4b95c9c.png"
+                                     alt="MongoDB 教程">
+                                <h6 class="media-heading">MongoDB 教程</h6>
+                            </div>
+                            <div class="media-body">
+                                <p>
+                                    MongoDB 教程 MongoDB是一个介于关系数据库和非关系数据库之间的产品......
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <hr/>
+                    
+                </div>
+
+                <div style="padding:5px 25px;">
+<script type="text/javascript">
+    /*300*250 创建于 2016/6/14*/
+    var cpro_id = "u2671568";
+</script>
+<script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="bottom-content row">
+        <div class="website col-xs-12 col-sm-7 col-md-4 col-lg-4 col-md-offset-1">
+            <h5><img class="img-responsive" src="/images/logo_2.png" alt=""></h5>
+            <p style="text-indent: 2em;">
+                汇智网是一个学习最前沿编程技术的平台,互动式的学习和实时在线的练习,能让你迅速进入状态,快速掌握知识技能。
+            </p>
+            <ul  class="bdsharebuttonbox">
+                <!--<li><a data-cmd="qzone" class="weixin" title="微信" href="#"></a></li>-->
+                <li><a data-cmd="qzone" class="kongjian" title="QQ空间" href="#"></a></li>
+                <li><a data-cmd="tsina" class="xinlang" title="新浪微博" href="#"></a></li>
+                <li><a data-cmd="tqq" class="tengxun" title="腾讯微博" href="#"></a></li>
+                <li><a data-cmd="renren" class="renren" title="人人网" href="#"></a></li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-2 col-lg-2">
+            <h5>友情链接 <!--a class="pull-right" href="/friends" target="_blank">更多>>></a--></h5>
+            <ul>
+                <li><a href="http://www.phonegap100.com" target="_blank">phonegap中文网</a></li>
+                <li><a href="http://bubuko.com/" target="_blank">布布扣</a></li>
+                <li><a href="http://www.jqsite.com/" target="_blank">前端社区网</a></li>
+                <li><a href="http://www.vue-js.com/" target="_blank">vue中文社区</a></li>
+                <li><a href="http://www.ofmonkey.com" target="_blank">程序员在线工具</a></li>
+                <li><a href="https://www.phaser-china.com" target="_blank">Phaser小站</a></li>
+                <li><a href="/friends" target="_blank">更多>>></a></li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-2 col-lg-2 footer-services">
+            <h5>服务与��持</h5>
+            <ul>
+                <li>
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2596887568&site=qq&menu=yes">
+                        <i class="glyphicon glyphicon-comment"></i>
+                        联系我们
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://weibo.com/u/5191023095">
+                        <i class="glyphicon glyphicon-heart"></i>
+                        关注微博</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://jq.qq.com/?_wv=1027&k=fV1rss">
+                        <i class="glyphicon glyphicon-user"></i>
+                        学习交流</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://cw.hubwiz.com/card/c">
+                        <i class="glyphicon glyphicon-book"></i>
+                        课程卡片</a>
+                </li>
+                <li>
+                    <a target="_blank" href="/about">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        关于我们
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://corpus.hubwiz.com/">
+                        <i class="glyphicon glyphicon-file"></i>
+                        语料库集
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://blog.hubwiz.com/">
+                        <i class="glyphicon glyphicon-file"></i>
+                        技术博客
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="code col-xs-12 col-sm-2 col-md-2 col-lg-2">
+            <h5>微信订阅号</h5>
+            <img class="img-responsive" src="/images/code.png" alt="">
+        </div>
+    </div>
+    <div class="copyright">
+        <!--&copy; 版权所有　Hubwiz,Inc. All Rights Reserved. 京ICP备13002042号-2-->
+	&copy; Hubwiz.com  &nbsp; 京ICP备13002042号-2
+    </div>
+</footer>
+<script>
+    //支持IE
+    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+        var style = document.createElement('style');
+        style.appendChild(document.createTextNode('@-ms-viewport{width:auto!important}'));
+        document.querySelector('head').appendChild(style)
+    }
+    //百度分析
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?f1ba5b4a33d29d84db69f029b9ace483";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    //heap
+    window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="http://ana.hubwiz.com/heap.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["identify","track"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};heap.load("1744309395");
+    //百度分享
+    window._bd_share_config = {
+        common:{
+            'text':'分享一个很棒的学习网站『汇智网』(http://www.hubwiz.com)，用互动的方式学习最前沿的IT知识，赶快加入吧！',
+            'desc':'汇智网- 最前沿的在线互动编程学习平台',
+            'bdComment':'汇智网 - 最前沿的在线互动编程学习平台',
+            'bdPic':'http://www.hubwiz.com/images/qrcode.jpg',
+            'onBeforeClick':function(cmd,config){
+                if(cmd == 'qzone'||cmd == 'renren'){
+                    config.bdDesc = config.text;
+                    config.bdText = config.desc;
+                }else{
+                    config.bdDesc = config.desc;
+                    config.bdText = config.text;
+                }
+                return config;
+            }
+        },
+        share:[]
+    };
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+    //    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<script>var _token='undefined',_avatar='/avatar/woman.jpg',_name='undefined',_currentPage='1',_pageCount='2';</script>
+<script src="/scripts/course.min.js" type="text/javascript"></script>
+
+
+<script src="http://premium.hubwiz.com/dist/donate.min.js"></script>
+<script type="text/javascript">
+    window._bd_share_config = {
+        "common": {
+            "bdSnsKey": {},
+            "bdText": '欢迎学习『jQuery』课程 - @汇智网，互动式IT职业技能在线教育', //jACKY - 2016-03-05
+            'bdDesc': 'jQuery 教程   jQuery 是一个轻量级的 JavaScript 库 ， jQuery 简化了 JavaScript 编程。它兼容CSS 3，jQuery2.0 后续不支持IE6-8。jQuery课程从入门到精通讲解jQuery搭建，各种 API 选择器如过滤表单，操作 DOM 元素如属性样式遍历，事件与应用如绑定触发焦点，动画特效如显示隐藏淡入淡出，Ajax使用，如何自定义插件。',
+            'bdComment': '汇智网 - 最前沿的在线互动编程学习平台',
+            "bdMini": "1",
+            "bdMiniList": false,
+            "bdPic": "",
+            "bdStyle": "1",
+            "bdSize": "32"
+        },
+        "share": {}
+    };
+    with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id='cavans'></canvas>
+</body>
+
+<script>
+
+    var canvas =document.createElement('canvas');
+    // var canvas = document.getElementById('cavans');
+    //设置宽高
+   
+    //生成画笔
+    var context = canvas.getContext('2d')
+	var text = {
+		text:'我傻么？',
+		x:150,
+		y:300
+	}
+    function drawmap(brush,img,fn){       
+       	brush.drawImage(img, 0, 0); 
+       	    //设置字体样式
+        context.font = "40px 微软雅黑";  
+	    context.fillStyle = "#5f513a"; 
+	    //从坐标点(50,50)开始绘制文字
+		fn(brush);
+        down();
+        //downloadImg()
+    }
+    //导入图片
+    function loadImg(src,fn){
+        var beauty = new Image();
+        beauty.src = src ; 
+        beauty.onload = function(){
+            canvas.width = beauty.width
+            canvas.height =  beauty.height
+            drawmap(context,beauty,fn); //绘图
+        };
+        beauty.onerror = function(){
+            window.alert('美女加载失败，请重试');
+        };
+    };  
+    //写字
+    function drawWrite(brush,map){
+          brush.fillText(map.text,map.x,map.y);  
+    }
+    //导入图片准备绘图
+    loadImg('./1.jpg',function(brush){
+    	drawWrite(brush,text)
+    });
+	
+    //下载图片 (不行)
+    function downloadImg(){
+       var a = document.createElement('a');
+       var content = canvas.toDataURL("image/png")
+       var blob = base64Img2Blob(content); //new Blob([content]);
+       a.href=URL.createObjectURL(blob);
+       a.download = '1.png'; console.log(a);      
+       a.click();      
+   } 
+
+   function base64Img2Blob(code){
+        var parts = code.split(';base64,');
+        var contentType = parts[0].split(':')[1];
+        var raw = window.atob(parts[1]);
+        console.log(raw);
+        var rawLength = raw.length;
+        var uInt8Array = new Uint8Array(rawLength);
+ 
+        for (var i = 0; i < rawLength; ++i) {
+         uInt8Array[i] = raw.charCodeAt(i);
+        }
+        return new Blob([uInt8Array], {type: contentType}); 
+      }
+
+function down(){
+    canvas.toBlob(function(blob) {
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '1.png'; console.log(a);      
+            a.click();  
+        })
+}
+
+     
+</script>
+</html>
