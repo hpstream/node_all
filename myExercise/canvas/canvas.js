@@ -26,29 +26,35 @@ function Canvas(id,width,height){
 }
 
 Canvas.prototype.arc =function(x, y, r, begin, end, direction){
-    var that = this;
-    var Sx = x;
-    var Sy = y;
-    var Vy = 0; 
-    var Vx = 0; 
+    var that = this,
+    posX = x,
+    posY = y,
+    g = this.g ,
+    speedX = 0,//小球X轴速度
+    speedY = 0,//小球Y轴速度
+    startSpeedX = 0,//小球X轴初始速度
+    startSpeedY = 0,//小球Y轴初始速度
+    radius = r;//小球半径
+    that.brush.strokeStyle = "blue";
     var time1 = setInterval(function(){
         that.brush.clearRect(0,0,that.width,that.height);  
-        that.brush.strokeStyle = "blue";
-        Sx +=0;
-        Vy += that.g;
-       
-        if( Sy - r > that.height ){
-            Sy  = that.height-r;
-            Vy = - Vy/2;    
-           
+        speedY += g; 
+        
+        //小球碰壁反弹
+        if(posY > that.height - radius){ 
+            speedY=-(8*speedY/10);
+        }  
+        if(posY > that.height - radius&&Math.floor(speedY)<1 && Math.floor(speedY) > -1 ){
+            posY=that.height - radius-1 ; 
+            clearInterval(time1);
+        }else{
+            posY += speedY;  
         }
-        if(Math.ceil(Sy) > that.height- 2*r && (Vy>=(-that.g) &&Vy<=that.g)){
-            Vy = 0 ;
-        }
-        Sy += Vy;
-        that.brush.arc(Sx, Sy, r, begin, end, direction);
+        that.brush.arc(posX, posY, r, begin, end, direction);
         that.brush.stroke();
         that.brush.beginPath();
+
+       
       
 
     },that.time)
