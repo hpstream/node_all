@@ -40,6 +40,11 @@ hpCanvas.prototype.run = function(){
     var that = this;
     function TimeLoop (){
         that.brush.clearRect(0,0,that.width,that.height);  
+        for(var i=0; i<that.elementArr.length;i++){
+            for(var j=i+1;j<that.elementArr.length;j++ ){
+                that.isCrash(that.elementArr[i],that.elementArr[j]);
+            }
+        }
         that.elementArr.forEach(function(v,i){
             v.draw();
         })
@@ -47,6 +52,19 @@ hpCanvas.prototype.run = function(){
     }
    
     TimeLoop();
+}
+
+// 碰撞函数
+hpCanvas.prototype.isCrash =function (obj1, obj2) {
+    var x = obj1.posX- obj2.posX;
+    var y = obj1.posY - obj2.posY;
+    var distance = Math.sqrt(x*x + y*y);//开方函数
+    if(distance <= obj1.radius + obj2.radius) {//判断碰撞
+        obj1.speedX = -obj1.speedX;
+        obj1.speedY = -obj1.speedY;
+        obj2.speedX = -obj2.speedX;
+        obj2.speedY = -obj2.speedY;
+    }
 }
 //暂停
 hpCanvas.prototype.pause = function(){
