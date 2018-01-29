@@ -42,7 +42,7 @@ Canvas.prototype.arc =function(x, y, r, begin, end, direction){
         posY += speedY;
         //小球碰壁反弹
         if(posY > that.height - radius){ 
-            speedY=-(speedY/2);
+            speedY=-(18*speedY/20);
             posY = that.height - radius
         }   
         that.brush.arc(posX, posY, r, begin, end, direction);

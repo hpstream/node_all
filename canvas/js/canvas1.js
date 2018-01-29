@@ -60,10 +60,15 @@ hpCanvas.prototype.isCrash =function (obj1, obj2) {
     var y = obj1.posY - obj2.posY;
     var distance = Math.sqrt(x*x + y*y);//开方函数
     if(distance <= obj1.radius + obj2.radius) {//判断碰撞
-        obj1.speedX = -obj1.speedX;
-        obj1.speedY = -obj1.speedY;
-        obj2.speedX = -obj2.speedX;
-        obj2.speedY = -obj2.speedY;
+        if((obj1.speedX>0&&obj2.speedX<0)||(obj1.speedX<0&&obj2.speedX>0)){
+            obj1.speedX = -obj1.speedX;
+            obj2.speedX = -obj2.speedX;       
+        }
+        if((obj1.speedY>0&&obj2.speedY<0)||(obj1.speedY<0&&obj2.speedY>0)){
+            obj1.speedY = -obj1.speedY;
+            obj2.speedY = -obj2.speedY;        
+        }
+       
     }
 }
 //暂停
