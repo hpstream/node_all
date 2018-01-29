@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .btn{
+            position:fixed;
+            margin-left: -43px;
+            left:50%;
+            top: 10px
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas">
+           
+    </canvas>
+    <video  id="mvideo" width="500" height="281" controls>
+            <source src="1.mp4" type="video/mp4"></source>
+    </video>
+   <div class="btn">
+       <button id="play">play</button>
+       <button id="stop">stop</button>
+   </div>
+    
+</body>
+<script>
+        
+       var doc = document;
+       var cw = window.innerWidth;
+       var ch = window.innerHeight;
+
+       var canvas = doc.getElementById('canvas');
+       canvas.width = cw
+       canvas.height = ch
+      
+       var brush = canvas.getContext('2d');
+
+       Myvideo = document.getElementById("mvideo");
+
+       doc.getElementById('play').onclick = function(){
+                Myvideo.play();
+       }
+       doc.getElementById('stop').onclick = function(){
+                Myvideo.pause();
+       }
+
+       //播放事件
+       Myvideo.addEventListener("play", function() {
+            draw(this, canvas, brush, cw, ch);
+        }, false)
+
+    function cerateCanvas(w, h) {
+        var cr = document.createElement("canvas");
+        cr.width = w;
+        cr.height = h;
+        return cr;
+    }
+
+    function draw(v, cans, c2, w, h) {
+        if(v.paused || v.ended) {
+            cancelAnimationFrame(stop);
+            return false;
+        }
+
+
+        c2.drawImage(v, 0, 0, w, h);
+        //获取图片数据
+        var imageData = c2.getImageData(0,0,w,h);
+        var pixels = imageData.data;
+        c2.clearRect(0,0,w,h);
+        var numTItleRows = 36;
+        var numTITleCols = 64;
+        var titleWidth = imageData.width/numTITleCols;
+        var titleHeight = imageData.height/numTItleRows
+        for(var r=0;r<numTItleRows;r++){
+            for(var c=0;c<numTITleCols;c++){
+                var x = (c*titleWidth)+(titleWidth/2)
+                var y = (r*titleHeight)+(titleHeight/2)
+                var pos = (Math.floor(y)*(imageData.width*4) + Math.floor(x)*4);
+                var red = pixels[pos];
+                var green = pixels[pos+1];
+                var blue = pixels[pos+2];
+                c2.fillStyle ="rgb("+red+","+green+","+blue+")";
+                c2.fillRect(x-titleWidth/2,y-titleHeight/2,titleWidth,titleHeight);
+            }
+        }
+
+        var stop = requestAnimationFrame(function() {
+            draw(v, cans, c2, w, h);
+        });
+    }
+</script>
+</html>
