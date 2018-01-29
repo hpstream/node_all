@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+        //canvas 中 sava(), restore() 方法的使用
+         var canvas = document.getElementById('canvas');
+         canvas.width = window.innerWidth
+         canvas.height = window.innerHeight
+         var brush = canvas.getContext('2d');
+       
+        brush.save(); //保存当前状态
+        brush.strokeStyle="#0000ff";
+        brush.strokeRect(30,30,30,30);
+        brush.restore();//恢复到上一个状态
+        brush.strokeRect(100,100,30,30);
+        //笛卡尔，爱心方程
+        brush.strokeStyle = 'rgb(241,158,194)'
+        // for(var i=0;i<360;i++){
+        //     // var x=200 + 50*(2*Math.cos(i/Math.PI)-Math.cos(2*i/Math.PI)); //笛卡尔爱心方程的x坐标
+        //     // var y=200 + 50*(2*Math.sin(i/Math.PI)-Math.sin(2*i/Math.PI)); //笛卡尔爱心方程的y坐标
+        //     var x =150 - 4*16*Math.pow(Math.sin(i/Math.PI),3);
+        //     var y =150 - 4*(13*Math.cos(i/Math.PI) - 5*Math.cos(2*i/Math.PI) -2*Math.cos(3*i/Math.PI) - Math.cos(4*i/Math.PI));
+        //     brush.arc(x,y,2,Math.PI*2,false);
+        //     brush.stroke();
+        // }
+        var i=0;
+        var id ;
+        function run1(){
+            brush.beginPath();
+            brush.fillStyle = 'rgb(241,158,194)'
+            var x =350 - 4*16*Math.pow(Math.sin(i*Math.PI/180),3);
+            var y =150 - 4*(13*Math.cos(i*Math.PI/180) - 5*Math.cos(2*i*Math.PI/180) -2*Math.cos(3*i*Math.PI/180) - Math.cos(4*i*Math.PI/180));
+            brush.arc(x,y,2,Math.PI*2,false);
+            brush.fill();
+            i++;        
+            id = requestAnimationFrame(run1);
+            if(i>360){
+            cancelAnimationFrame(id);
+            }
+        }
+            
+       run1();
+
+</script>
+</html>
