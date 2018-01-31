@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    主页面
+    <input type="text" id='parentID'>
+    <div>
+        <iframe id= 'other' name='myFrame' src="./other.html" frameborder="0"></iframe>
+    </div>
+</body>
+<script>
+    $(function(){
+        var childNode ;
+        $('#parentID').on('keyup',function(){
+            childNode.find('#childID').val($(this).val())
+        })
+        
+        $("#other").on('load',function(){
+            childNode = $(this.contentDocument);
+            $(this.document).find('#abc').on('click',function(){
+                console.log(33);
+            })
+        })
+        // $(iframeWin).load(function(){
+        //     // console.log(window.frames['iframeWin'])
+        // })
+ 
+    })
+  
+</script>
+</html>

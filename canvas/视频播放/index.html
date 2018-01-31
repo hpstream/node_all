@@ -92,7 +92,8 @@
                 var red = pixels[pos];
                 var green = pixels[pos+1];
                 var blue = pixels[pos+2];
-                c2.fillStyle ="rgb("+red+","+green+","+blue+")";
+                c2.beginPath();
+                c2.fillStyle ="rgb("+red+","+green+","+blue+")";               
                 c2.fillRect(x-titleWidth/2,y-titleHeight/2,titleWidth,titleHeight);
             }
         }
