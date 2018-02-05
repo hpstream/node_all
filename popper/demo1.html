@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> <meta charset="UTF-8">
+    <style type="text/css">
+       .my-button {
+           width: 240px;
+       }
+        .example {
+            width: 100%;
+            -webkit-order: 1;
+            -ms-order: 1;
+            order: 1;
+            position: relative;
+            min-height: 450px;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-content: center;
+            align-items: center;
+        }
+        .my-button {
+            width: 30%;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            border-style: dotted;
+            border-color: white;
+            border-width: medium;
+        }
+        .my-popper {
+            background: #FFC107;
+            color: black;
+            width: 50px;
+            border-radius: 3px;
+            box-shadow: 0 0 2px rgba(0,0,0,0.5);
+            padding: 10px;
+            text-align: center;
+        }
+        .arrow{
+            width: 0;
+            height: 0;
+            position: absolute;
+            display: block;
+            left: 0;
+            top:0;
+            transform-origin: left top;
+            border-width: 11px 11px 0px 11px;
+            border-style: solid;
+            border-color: #00ffc8 transparent transparent transparent;
+        
+        }
+        .arrow::after{
+            content: '';
+            width: 0;
+            height: 0;
+            top: -11px;
+            left: -10px;
+            position: absolute;
+            display: block;
+            border-width: 10px 10px 0px 10px;
+            border-style: solid;
+            border-color: #ff3300 transparent transparent transparent;      
+        }
+    </style>
+</head>
+<body>
+<div class="example">
+    <div class="my-button">123</div>
+     <div class="my-popper">
+         <!-- <span class="arrow" x-arrow></span> -->
+            <div class='arrow'></div>
+         666
+        </div>
+ 
+</div>
+
+
+
+</body>
+<script src="https://unpkg.com/popper.js@1.12.9/dist/umd/popper.js"></script>
+<script type="text/javascript">
+    function applyReactStyle(data) {
+        console.log(data)
+    };
+    var example = document.querySelector('.example');
+    var reference = document.querySelector('.my-button');
+    var popper = document.querySelector('.my-popper');
+    var arrow = document.querySelector('.arrow');
+    var anotherPopper = new Popper(
+        reference,
+        popper,
+        {
+            placement: 'top',
+            boundariesElement: example,
+            modifiers:{
+                arrow :{
+                    element:arrow,
+                    enabled:false
+                }
+            }
+           
+        }
+    );
+    console.log(anotherPopper);
+
+
+
+</script>
+</html>
