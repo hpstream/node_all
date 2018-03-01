@@ -21,3 +21,17 @@
     * [Generator函数的介绍](./es6/es6.md)
 * [socket.io](/README.md)
     * [搭建基本服务]
+
+
+* [基础功能]()
+    * [富文本编辑ckeditor](https://github.com/hpstream/node_all/blob/master/ckeditor/1.html)
+    * [百度富文本编辑uedtitor](https://github.com/hpstream/node_all/blob/master/ueditor%E7%99%BE%E5%BA%A6%E5%AF%8C%E6%96%87%E6%9C%AC/1.html)
+    * [响应式布局](https://github.com/hpstream/node_all/blob/master/%E5%93%8D%E5%BA%94%E5%BC%8F/response.html)
+    * [H5文件上传](https://github.com/hpstream/node_all/blob/master/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/file.html)
+    * [文件上传兼容性](https://github.com/hpstream/node_all/blob/master/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%85%BC%E5%AE%B9/file.html)
+    * [node网络爬虫](https://github.com/hpstream/node_all/blob/master/myExercise/cheerio/cheerio.js)
+    * [socket](https://github.com/hpstream/node_all/blob/master/myExercise/socket/client.js)
+    * [Websocket](https://github.com/hpstream/node_all/blob/master/myExercise/websocket/static/client.html)
+    * [canvas图片下载(前端)](https://github.com/hpstream/node_all/blob/master/myExercise/canvas/index.html)
+    * [frame与iframe研究](https://github.com/hpstream/node_all/blob/master/frame%E4%B8%8Eiframe/main.html)
+    * [jquery列表拖拽](https://github.com/hpstream/node_all/blob/master/%E5%88%97%E8%A1%A8%E6%8B%96%E6%8B%BD/2.html)
