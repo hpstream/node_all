@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>不考虑兼容性问题</h1>
+    <input id="avatarSlect" type="file"  value="上传" multiple="multiple" accept="image/*">
+</body>
+
+
+<script>
+        $('#avatarSlect').on('change',function (e) {
+            console.log(e.target.files);
+            var one =e.target.files[0];
+            if(!/image/.test(one.type)){
+               alert('请上传图片');
+               return;
+            }
+            var fr=new FileReader();
+            fr.readAsDataURL(one);
+            fr.onload = function () {
+                console.log(this.result);
+            };
+
+            //图片传到后台
+
+            var formData=new FormData();
+
+            formData.append('files', e.target.files);
+
+            $.ajax({
+                url: '/upload_avatar/',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (args) {
+
+                }
+            })
+
+        })
+</script>
+</html>
