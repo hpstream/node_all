@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>可排序小部件（Sortable Widget）演示</title>
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+  <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+</head>
+<style>
+#sortable li{
+display:inline-block;
+margin:0 20px;
+}
+img{
+width:100px;
+}
+</style>
+<body>
+ 
+<ul id="sortable">
+  <li><img src='./1.png' />
+  <span>1</span>
+  </li>
+  <li><img src='./2.png'/>
+  <span>2</span>
+  </li>
+  
+  <li><img src='./3.png'/>
+  <span>3</span></li>
+  
+  <li><img src='./4.png'/>
+  <span>4</span></li>
+  
+  <li><img src='./5.png'/>
+  <span>5</span></li>
+  
+</ul>
+ <div>
+	<img id='show' src='./5.png' style='    width: 100%;' value='1'/>
+	 <input type='text' value="444">
+ <div>
+<script>
+$("#sortable").sortable({
+stop: function( event, ui ) {
+	$('#sortable li').map(function(index,dom){
+	   $(dom).find('span').text(index+1);
+	})
+}
+});
+$("#sortable li").on('mouseenter','img',function(){
+	var src = $(this).attr('src');
+	$('#show').attr('src',src);
+})
+
+$("#sortable li").on('mouseleave','img',function(){
+		
+})
+
+</script>
+ 
+</body>
+</html>
