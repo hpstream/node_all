@@ -42,11 +42,11 @@ width:100px;
  <div>
 <script>
 $("#sortable").sortable({
-stop: function( event, ui ) {
-	$('#sortable li').map(function(index,dom){
-	   $(dom).find('span').text(index+1);
-	})
-}
+  stop: function( event, ui ) {
+    $('#sortable li').map(function(index,dom){
+      $(dom).find('span').text(index+1);
+    })
+  }
 });
 $("#sortable li").on('mouseenter','img',function(){
 	var src = $(this).attr('src');
