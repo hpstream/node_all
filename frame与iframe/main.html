@@ -23,6 +23,7 @@
         
         $("#other").on('load',function(){
             childNode = $(this.contentDocument);
+            console.log(childNode);
             $(this.document).find('#abc').on('click',function(){
                 console.log(33);
             })
