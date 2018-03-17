@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    //使用数组的concat方法，等于数组重新复制了一份
+    var data = [
+        {
+            icon: 'example',
+            id: 'demo',
+            name: 'demo',
+            requestUrl: '/demo',
+            parentId: null,
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'css',
+            name: 'css',
+            permissionName: 'css',
+            parentId: 'demo',
+            requestUrl: '/demo/css',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'color',
+            name: 'color颜色',
+            parentId: 'demo',
+            requestUrl: '/demo/color',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'standard',
+            name: '项目规范',
+            parentId: 'demo',
+            requestUrl: '/demo/codeStandard',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'icons',
+            name: 'ICONS',
+            parentId: 'demo',
+            requestUrl: '/demo/icons',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'variant',
+            name: '全局变量',
+            parentId: 'demo',
+            requestUrl: '/demo/variant',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'method',
+            name: '公共方法',
+            parentId: 'demo',
+            requestUrl: '/demo/method',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'component',
+            name: '组件使用',
+            parentId: null,
+            requestUrl: '/demo1',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'table',
+            name: '表格使用',
+            parentId: 'component',
+            requestUrl: '/demo1/table',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'tree',
+            name: 'tree使用',
+            parentId: 'component',
+            requestUrl: '/demo1/tree',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'card',
+            name: '卡片使用',
+            parentId: 'component',
+            requestUrl: '/demo1/card',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'echart',
+            name: 'echart',
+            parentId: 'component',
+            requestUrl: '/echart',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'date',
+            name: '日期选择器',
+            parentId: 'component',
+            requestUrl: '/date',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'inputTree',
+            name: '下拉框选择树',
+            parentId: 'component',
+            requestUrl: '/inputTree',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'scrollBar',
+            name: 'scrollBar',
+            parentId: 'component',
+            requestUrl: '/scrollBar',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'toolTip',
+            name: 'toolTip',
+            parentId: 'component',
+            requestUrl: '/toolTip',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'system',
+            name: '系统管理',
+            parentId: null,
+            requestUrl: '/system',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'addPage',
+            name: '增加页面',
+            parentId: 'system',
+            requestUrl: '/demo1/addPage',
+            type: ''
+        },
+        {
+            icon: 'example',
+            id: 'permission',
+            name: '菜单管理',
+            parentId: 'system',
+            requestUrl: '/permission',
+            type: ''
+        }
+    ];
+
+   
+
+    var data1 = [];
+    for (var i = 0; i < 10; i++) {
+        data1.push({ id: 'level1_' + i, pid: null })
+        for (var j = 0; j < 100; j++) {
+            data1.push({ id: 'level1_' + i+'level2_' + j, pid: 'level1_' + i })
+            for (var k = 0; k < 100; k++) {
+                data1.push({ id: 'level1_' + i+'level2_' + j+'level3_' + k, pid: 'level1_' + i+'level2_' + j })
+            }
+        }
+    }
+  
+    function changeToTree(RSdata, id, pid) {
+        //为防止破缘原数组，从新复制一遍
+       
+        var data = [].concat(RSdata);
+        // var data = RSdata;
+        var map = {};
+        for (var i = 0; i < data.length; i++) {
+            // 把数组编程json;
+            map[data[i][id]] = data[i];
+        }
+        for (var key in map) {
+                var tem = map[key];
+                if (map[tem[pid]]) { //根据pid区map寻找
+                    map[tem[pid]].chidren = map[tem[pid]].chidren || [];
+                    map[tem[pid]].chidren.push(tem);
+                } else {
+                    map['root'] = map['root'] || [];
+                    map['root'].push(tem)
+                }
+            }
+         
+            return map['root'] ;
+    }
+    // console.log(changeToTree(data, 'id', 'parentId'));
+    console.time('abs')
+    console.log(changeToTree(data1, 'id', 'pid'));
+    console.timeEnd('abs');
+      
+</script>
+
+
+</html>
