@@ -170,22 +170,22 @@
         }
     ];
 
-   
+
 
     var data1 = [];
     for (var i = 0; i < 10; i++) {
         data1.push({ id: 'level1_' + i, pid: null })
-        for (var j = 0; j < 100; j++) {
-            data1.push({ id: 'level1_' + i+'level2_' + j, pid: 'level1_' + i })
-            for (var k = 0; k < 100; k++) {
-                data1.push({ id: 'level1_' + i+'level2_' + j+'level3_' + k, pid: 'level1_' + i+'level2_' + j })
+        for (var j = 0; j < 10; j++) {
+            data1.push({ id: 'level1_' + i + 'level2_' + j, pid: 'level1_' + i })
+            for (var k = 0; k < 10; k++) {
+                data1.push({ id: 'level1_' + i + 'level2_' + j + 'level3_' + k, pid: 'level1_' + i + 'level2_' + j })
             }
         }
     }
-    // 缺陷、id决定不能相同，不然肯定有问题
-    function changeToTree(RSdata, id, pid) {
+     //缺陷、id决定不能相同，不然肯定有问题
+    function changeToTree1(RSdata, id, pid) {
         //为防止破缘原数组，从新复制一遍
-       
+
         var data = [].concat(RSdata);
         // var data = RSdata;
         var map = {};
@@ -203,14 +203,73 @@
                     map['root'].push(tem)
                 }
             }
-         
-            return map['root'] ;
+
+            return map;
     }
-    // console.log(changeToTree(data, 'id', 'parentId'));
-    console.time('abs')
+   
+   
+    console.time('abs1')
     console.log(changeToTree(data1, 'id', 'pid'));
+    console.timeEnd('abs1');
+    // console.log(changeToTree1(data, 'id', 'parentId'));
+    console.time('abs')
+    console.log(changeToTree1(data1, 'id', 'pid'));
     console.timeEnd('abs');
-      
+
+  
+    //=======================================
+    function changeToTree(data, id, pid) {
+        const d_class = arrayToObj(data, id)
+        const p_class = classify(data, pid)
+        const leaf = {}
+        for (const key in d_class) {
+            if (!p_class[key]) {
+                leaf[key] = d_class[key]
+            }
+        }
+        const tree = getTreeData(id, pid, d_class, leaf)
+        return tree
+    }
+    function getTreeData(id, pid, d_class, leaf, tree = []) {
+        
+            if (Object.getOwnPropertyNames(leaf).length === 0) {
+            return tree
+         }
+        
+        // 遍历leaf中所有的节点，将他放到他父类的children里面
+        for (const key in leaf) {
+            const _pid = leaf[key][pid]
+            delete leaf[key]
+            if (d_class[_pid]) { // 如果父节点存在
+                d_class[_pid].children = d_class[_pid].children || []
+                d_class[_pid].children.push(d_class[key])
+                leaf[_pid] = d_class[_pid]
+            } else {
+                tree.push(d_class[key])
+            }
+        }
+        return getTreeData(id, pid, d_class, leaf, tree)
+    }
+
+    function classify(data = [], key = 'seriesName') {
+        const obj = {}
+        for (let i = 0; i < data.length; i++) {
+            const item = data[i][key]
+            obj[item] = obj[item] || []
+            obj[item].push(data[i])
+        }
+        return obj
+    }
+
+
+    function arrayToObj(list, key) {
+        const obj = {}
+        for (const item of list) {
+            obj[item[key]] = item
+        }
+        return obj
+    }
+
 </script>
 
 
