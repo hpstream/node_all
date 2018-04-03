@@ -1,0 +1,197 @@
+.align-baseline {
+  vertical-align: baseline;
+}
+.align-top {
+  vertical-align: top;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.align-bottom {
+  vertical-align: bottom;
+}
+.left-align {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+.right-align {
+  text-align: right;
+}
+.justify {
+  text-align: justify;
+}
+.hide {
+  display: none !important;
+}
+.visible-hidden {
+  visibility: hidden;
+}
+.animate-hide {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.inline {
+  display: inline;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.table {
+  display: table;
+}
+.table-cell {
+  display: table-cell;
+}
+.hidden {
+  overflow: hidden;
+}
+.hiddenX {
+  overflow-x: hidden;
+}
+.hiddenY {
+  overflow-y: hidden;
+}
+.scrollY {
+  overflow-y: scroll;
+}
+.scrollX {
+  overflow-x: scroll;
+}
+.scroll {
+  overflow: scroll;
+}
+.auto {
+  overflow: auto;
+}
+.autoY {
+  overflow-y: auto;
+}
+.autoX {
+  overflow-x: auto;
+}
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/*left,right 浮动容易重名 */
+.f-left {
+  float: left;
+}
+.f-right {
+  float: right;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.break-word {
+  word-wrap: break-word;
+}
+.font-family-inherit {
+  font-family: inherit;
+}
+.font-size-inherit {
+  font-size: inherit;
+}
+.text-decoration-none {
+  text-decoration: none;
+}
+.border-box {
+  box-sizing: border-box;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.top-0 {
+  top: 0;
+}
+.right-0 {
+  right: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+.left-0 {
+  left: 0;
+}
+.list-style-none {
+  list-style: none;
+}
+.underline {
+  text-decoration: underline;
+}
+.dot-hidden {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.multiple2-hidden {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical;
+  /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 2;
+  /** 显示的行数 **/
+  overflow: hidden;
+  /** 隐藏超出的内容 **/
+}
+.multiple3-hidden {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical;
+  /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 3;
+  /** 显示的行数 **/
+  overflow: hidden;
+  /** 隐藏超出的内容 **/
+}
+.list-reset {
+  list-style: none;
+  padding-left: 0;
+}
+.z1 {
+  z-index: var(--z1);
+}
+.z2 {
+  z-index: var(--z2);
+}
+.z3 {
+  z-index: var(--z3);
+}
+.z4 {
+  z-index: var(--z4);
+}
+:root {
+  --z1: 1;
+  --z2: 2;
+  --z3: 3;
+  --z4: 4;
+}

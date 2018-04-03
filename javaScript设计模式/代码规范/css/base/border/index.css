@@ -1,0 +1,19 @@
+@charset "utf-8";
+.border-dashed {
+  border-style: dashed;
+}
+.border-solid {
+  border-style: solid;
+}
+.border-width1 {
+  border-width: 1px;
+}
+.border-width2 {
+  border-width: 2px;
+}
+.border-width3 {
+  border-width: 3px;
+}
+.radius-circle {
+  border-radius: 50%;
+}
