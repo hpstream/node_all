@@ -38,8 +38,10 @@ width:100px;
 </ul>
  <div>
 	<img id='show' src='./5.png' style='    width: 100%;' value='1'/>
-	 <input type='text' value="444">
+   <input type='text' value="444">
+   <div id="wzy"></div>
  <div>
+   
 <script>
 $("#sortable").sortable({
   stop: function( event, ui ) {
@@ -57,6 +59,13 @@ $("#sortable li").on('mouseleave','img',function(){
 		
 })
 
+$.ajax({
+  url:'https://www.easy-mock.com/mock/5a56cf0b55fb93147c5911e7/example/api/ce',
+  type:'get',
+  success:function(d){
+      $('#wzy').text(d.data.data)
+  }
+})
 </script>
  
 </body>
