@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id='dsad'></div>
+</body>
+    <script>
+        $.ajax({
+            url:'https://www.easy-mock.com/mock/5a56cf0b55fb93147c5911e7/example/api/ce',
+            type:"get",
+            success:function(d){
+                $('#dsad').text(d.data.data);
+            }
+            })
+        
+    </script>
+</html>
