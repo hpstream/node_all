@@ -1,0 +1,78 @@
+/* html的font-size以16为基准,改变名以（h+字体大小）*/
+:root {
+  --h24: 1.5rem;
+  /* 24px*/
+  --h22: 1.375rem;
+  /* 22px*/
+  --h20: 1.25rem;
+  /* 20px*/
+  --h18: 1.125rem;
+  /* 18px*/
+  --h16: 1rem;
+  /* 16px*/
+  --h14: .875rem;
+  /* 14px*/
+  --h12: .75rem;
+  /* 12px*/
+  --h28: 1.75rem;
+  /* 32px*/
+  --h32: 2rem;
+  /* 32px*/
+  --h36: 2.25rem;
+  /* 32px*/
+  --h40: 2.5rem;
+  /* 32px*/
+  --h48: 3rem;
+  /* 48px*/
+}
+.italic {
+  font-style: italic;
+}
+.oblique {
+  font-style: oblique;
+}
+.bold500 {
+  font-weight: 500;
+}
+.bold {
+  font-weight: bold;
+}
+.bold800 {
+  font-weight: 800;
+}
+.h24 {
+  font-size: var(--h24);
+}
+.h22 {
+  font-size: var(--h22);
+}
+.h20 {
+  font-size: var(--h20);
+}
+.h18 {
+  font-size: var(--h18);
+}
+.h16 {
+  font-size: var(--h16);
+}
+.h14 {
+  font-size: var(--h14);
+}
+.h12 {
+  font-size: var(--h12);
+}
+.h28 {
+  font-size: var(--h28);
+}
+.h32 {
+  font-size: var(--h32);
+}
+.h36 {
+  font-size: var(--h36);
+}
+.h40 {
+  font-size: var(--h40);
+}
+.h48 {
+  font-size: var(--h40);
+}

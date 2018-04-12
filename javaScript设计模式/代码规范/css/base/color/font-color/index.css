@@ -1,0 +1,69 @@
+.color-white {
+  color: #FFFFFF;
+}
+.color-smokeWhite {
+  color: #F5F5F5;
+}
+.color-title {
+  color: #404040;
+}
+.color-secondaryText {
+  color: #8B8B8B;
+}
+.color-placeholder {
+  color: #ADADAD;
+}
+.color-disabled {
+  color: #CACACA;
+}
+/*
+*       文件链接色
+*/
+.color-link {
+  color: #1B95E7;
+}
+.color-link:hover {
+  color: #52AEED;
+}
+.color-link:active {
+  color: #177DC9;
+}
+.color-error {
+  color: #F04134;
+}
+.color-error:hover {
+  color: #F04134;
+}
+.color-error:active {
+  color: #D73435;
+}
+.color-sucess {
+  color: #00A854;
+}
+.color-success:hover {
+  color: #3DBD7D;
+}
+.color-success:active {
+  color: #00924C;
+}
+.color-wanrning {
+  color: #FFBF00;
+}
+.color-warning:hover {
+  color: #FFCE3D;
+}
+.color-warning:active {
+  color: #E09A00;
+}
+.color-blue {
+  color: #1B95E7;
+}
+.color-green {
+  color: #00A854;
+}
+.color-yellow {
+  color: #FFBF00;
+}
+.color-red {
+  color: #F04134;
+}

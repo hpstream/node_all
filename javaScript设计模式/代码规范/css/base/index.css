@@ -1,0 +1,958 @@
+@charset "utf-8";
+.border-dashed {
+  border-style: dashed;
+}
+.border-solid {
+  border-style: solid;
+}
+.border-width1 {
+  border-width: 1px;
+}
+.border-width2 {
+  border-width: 2px;
+}
+.border-width3 {
+  border-width: 3px;
+}
+.radius-circle {
+  border-radius: 50%;
+}
+/*
+*   弹性布局，具体以 http://basscss.com/ 为基础
+*   不理解弹性布局可以查看 http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?^%$ 就明白了了什么是弹性布局
+*/
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
+}
+.items-center {
+  align-items: center;
+}
+.items-baseline {
+  align-items: baseline;
+}
+.items-stretch {
+  align-items: stretch;
+}
+.self-start {
+  align-self: flex-start;
+}
+.self-end {
+  align-self: flex-end;
+}
+.self-center {
+  align-self: center;
+}
+.self-baseline {
+  align-self: baseline;
+}
+.self-stretch {
+  align-self: stretch;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.content-start {
+  align-content: flex-start;
+}
+.content-end {
+  align-content: flex-end;
+}
+.content-center {
+  align-content: center;
+}
+.content-between {
+  align-content: space-between;
+}
+.content-around {
+  align-content: space-around;
+}
+.content-stretch {
+  align-content: stretch;
+}
+/* 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893 */
+.flex-auto {
+  flex: 1 1 auto;
+  min-width: 0;
+  /* 1 */
+  min-height: 0;
+  /* 1 */
+}
+.flex-none {
+  flex: none;
+}
+.align-baseline {
+  vertical-align: baseline;
+}
+.align-top {
+  vertical-align: top;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.align-bottom {
+  vertical-align: bottom;
+}
+.left-align {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+.right-align {
+  text-align: right;
+}
+.justify {
+  text-align: justify;
+}
+.hide {
+  display: none !important;
+}
+.visible-hidden {
+  visibility: hidden;
+}
+.animate-hide {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.inline {
+  display: inline;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.table {
+  display: table;
+}
+.table-cell {
+  display: table-cell;
+}
+.hidden {
+  overflow: hidden;
+}
+.hiddenX {
+  overflow-x: hidden;
+}
+.hiddenY {
+  overflow-y: hidden;
+}
+.scrollY {
+  overflow-y: scroll;
+}
+.scrollX {
+  overflow-x: scroll;
+}
+.scroll {
+  overflow: scroll;
+}
+.auto {
+  overflow: auto;
+}
+.autoY {
+  overflow-y: auto;
+}
+.autoX {
+  overflow-x: auto;
+}
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/*left,right 浮动容易重名 */
+.f-left {
+  float: left;
+}
+.f-right {
+  float: right;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.break-word {
+  word-wrap: break-word;
+}
+.font-family-inherit {
+  font-family: inherit;
+}
+.font-size-inherit {
+  font-size: inherit;
+}
+.text-decoration-none {
+  text-decoration: none;
+}
+.border-box {
+  box-sizing: border-box;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.top-0 {
+  top: 0;
+}
+.right-0 {
+  right: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+.left-0 {
+  left: 0;
+}
+.list-style-none {
+  list-style: none;
+}
+.underline {
+  text-decoration: underline;
+}
+.dot-hidden {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.multiple2-hidden {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical;
+  /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 2;
+  /** 显示的行数 **/
+  overflow: hidden;
+  /** 隐藏超出的内容 **/
+}
+.multiple3-hidden {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical;
+  /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 3;
+  /** 显示的行数 **/
+  overflow: hidden;
+  /** 隐藏超出的内容 **/
+}
+.list-reset {
+  list-style: none;
+  padding-left: 0;
+}
+.z1 {
+  z-index: var(--z1);
+}
+.z2 {
+  z-index: var(--z2);
+}
+.z3 {
+  z-index: var(--z3);
+}
+.z4 {
+  z-index: var(--z4);
+}
+:root {
+  --z1: 1;
+  --z2: 2;
+  --z3: 3;
+  --z4: 4;
+}
+/* html的font-size以16为基准,改变名以（h+字体大小）*/
+:root {
+  --h24: 1.5rem;
+  /* 24px*/
+  --h22: 1.375rem;
+  /* 22px*/
+  --h20: 1.25rem;
+  /* 20px*/
+  --h18: 1.125rem;
+  /* 18px*/
+  --h16: 1rem;
+  /* 16px*/
+  --h14: .875rem;
+  /* 14px*/
+  --h12: .75rem;
+  /* 12px*/
+  --h28: 1.75rem;
+  /* 32px*/
+  --h32: 2rem;
+  /* 32px*/
+  --h36: 2.25rem;
+  /* 32px*/
+  --h40: 2.5rem;
+  /* 32px*/
+  --h48: 3rem;
+  /* 48px*/
+}
+.italic {
+  font-style: italic;
+}
+.oblique {
+  font-style: oblique;
+}
+.bold500 {
+  font-weight: 500;
+}
+.bold {
+  font-weight: bold;
+}
+.bold800 {
+  font-weight: 800;
+}
+.h24 {
+  font-size: var(--h24);
+}
+.h22 {
+  font-size: var(--h22);
+}
+.h20 {
+  font-size: var(--h20);
+}
+.h18 {
+  font-size: var(--h18);
+}
+.h16 {
+  font-size: var(--h16);
+}
+.h14 {
+  font-size: var(--h14);
+}
+.h12 {
+  font-size: var(--h12);
+}
+.h28 {
+  font-size: var(--h28);
+}
+.h32 {
+  font-size: var(--h32);
+}
+.h36 {
+  font-size: var(--h36);
+}
+.h40 {
+  font-size: var(--h40);
+}
+.h48 {
+  font-size: var(--h40);
+}
+/*
+*   1rem 是在html中字体设置的大小。若果设为16px, 0.25rem 相当于4px
+*   定义基础组件 padding 范围 0 ~ 3rem ,如有不符合基本变量，可以按照实际情况添加
+*/
+:root {
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-9: 2.5rem;
+  --space-10: 3rem;
+}
+.p0 {
+  padding: 0;
+}
+.pt0 {
+  padding-top: 0;
+}
+.pr0 {
+  padding-right: 0;
+}
+.pb0 {
+  padding-bottom: 0;
+}
+.pl0 {
+  padding-left: 0;
+}
+.px0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.py0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.p1 {
+  padding: var(--space-1);
+}
+.pt1 {
+  padding-top: var(--space-1);
+}
+.pr1 {
+  padding-right: var(--space-1);
+}
+.pb1 {
+  padding-bottom: var(--space-1);
+}
+.pl1 {
+  padding-left: var(--space-1);
+}
+.py1 {
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-1);
+}
+.px1 {
+  padding-left: var(--space-1);
+  padding-right: var(--space-1);
+}
+.p2 {
+  padding: var(--space-2);
+}
+.pt2 {
+  padding-top: var(--space-2);
+}
+.pr2 {
+  padding-right: var(--space-2);
+}
+.pb2 {
+  padding-bottom: var(--space-2);
+}
+.pl2 {
+  padding-left: var(--space-2);
+}
+.py2 {
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+.px2 {
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+}
+.p3 {
+  padding: var(--space-3);
+}
+.pt3 {
+  padding-top: var(--space-3);
+}
+.pr3 {
+  padding-right: var(--space-3);
+}
+.pb3 {
+  padding-bottom: var(--space-3);
+}
+.pl3 {
+  padding-left: var(--space-3);
+}
+.py3 {
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+}
+.px3 {
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+}
+.p4 {
+  padding: var(--space-4);
+}
+.pt4 {
+  padding-top: var(--space-4);
+}
+.pr4 {
+  padding-right: var(--space-4);
+}
+.pb4 {
+  padding-bottom: var(--space-4);
+}
+.pl4 {
+  padding-left: var(--space-4);
+}
+.py4 {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+.px4 {
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+.p5 {
+  padding: var(--space-5);
+}
+.pt5 {
+  padding-top: var(--space-5);
+}
+.pr5 {
+  padding-right: var(--space-5);
+}
+.pb5 {
+  padding-bottom: var(--space-5);
+}
+.pl5 {
+  padding-left: var(--space-5);
+}
+.py5 {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
+}
+.px5 {
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
+}
+.p6 {
+  padding: var(--space-6);
+}
+.pt6 {
+  padding-top: var(--space-6);
+}
+.pr6 {
+  padding-right: var(--space-6);
+}
+.pb6 {
+  padding-bottom: var(--space-6);
+}
+.pl6 {
+  padding-left: var(--space-6);
+}
+.py6 {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+.px6 {
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+.p7 {
+  padding: var(--space-7);
+}
+.pt7 {
+  padding-top: var(--space-7);
+}
+.pr7 {
+  padding-right: var(--space-7);
+}
+.pb7 {
+  padding-bottom: var(--space-7);
+}
+.pl7 {
+  padding-left: var(--space-7);
+}
+.py7 {
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
+}
+.px7 {
+  padding-left: var(--space-7);
+  padding-right: var(--space-7);
+}
+.p8 {
+  padding: var(--space-8);
+}
+.pt8 {
+  padding-top: var(--space-8);
+}
+.pr8 {
+  padding-right: var(--space-8);
+}
+.pb8 {
+  padding-bottom: var(--space-8);
+}
+.pl8 {
+  padding-left: var(--space-8);
+}
+.py8 {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+.px8 {
+  padding-left: var(--space-8);
+  padding-right: var(--space-8);
+}
+.p9 {
+  padding: var(--space-9);
+}
+.pt9 {
+  padding-top: var(--space-9);
+}
+.pr9 {
+  padding-right: var(--space-9);
+}
+.pb9 {
+  padding-bottom: var(--space-9);
+}
+.pl9 {
+  padding-left: var(--space-9);
+}
+.py9 {
+  padding-top: var(--space-9);
+  padding-bottom: var(--space-9);
+}
+.px9 {
+  padding-left: var(--space-9);
+  padding-right: var(--space-9);
+}
+.p10 {
+  padding: var(--space-10);
+}
+.pt10 {
+  padding-top: var(--space-10);
+}
+.pr10 {
+  padding-right: var(--space-10);
+}
+.pb10 {
+  padding-bottom: var(--space-10);
+}
+.pl10 {
+  padding-left: var(--space-10);
+}
+.py10 {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-10);
+}
+.px10 {
+  padding-left: var(--space-10);
+  padding-right: var(--space-10);
+}
+/*
+*   1rem 是在html中字体设置的大小。若果设为16px, 0.25rem 相当于4px
+*   定义基础组件 margin 范围 0 ~ 3rem ,如有不符合基本变量，可以按照实际情况添加
+*/
+:root {
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-9: 2.5rem;
+  --space-10: 3rem;
+}
+.p0 {
+  margin: 0;
+}
+.pt0 {
+  margin-top: 0;
+}
+.pr0 {
+  margin-right: 0;
+}
+.pb0 {
+  margin-bottom: 0;
+}
+.pl0 {
+  margin-left: 0;
+}
+.px0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+.py0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.p1 {
+  margin: var(--space-1);
+}
+.pt1 {
+  margin-top: var(--space-1);
+}
+.pr1 {
+  margin-right: var(--space-1);
+}
+.pb1 {
+  margin-bottom: var(--space-1);
+}
+.pl1 {
+  margin-left: var(--space-1);
+}
+.py1 {
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-1);
+}
+.px1 {
+  margin-left: var(--space-1);
+  margin-right: var(--space-1);
+}
+.p2 {
+  margin: var(--space-2);
+}
+.pt2 {
+  margin-top: var(--space-2);
+}
+.pr2 {
+  margin-right: var(--space-2);
+}
+.pb2 {
+  margin-bottom: var(--space-2);
+}
+.pl2 {
+  margin-left: var(--space-2);
+}
+.py2 {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.px2 {
+  margin-left: var(--space-2);
+  margin-right: var(--space-2);
+}
+.p3 {
+  margin: var(--space-3);
+}
+.pt3 {
+  margin-top: var(--space-3);
+}
+.pr3 {
+  margin-right: var(--space-3);
+}
+.pb3 {
+  margin-bottom: var(--space-3);
+}
+.pl3 {
+  margin-left: var(--space-3);
+}
+.py3 {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.px3 {
+  margin-left: var(--space-3);
+  margin-right: var(--space-3);
+}
+.p4 {
+  margin: var(--space-4);
+}
+.pt4 {
+  margin-top: var(--space-4);
+}
+.pr4 {
+  margin-right: var(--space-4);
+}
+.pb4 {
+  margin-bottom: var(--space-4);
+}
+.pl4 {
+  margin-left: var(--space-4);
+}
+.py4 {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.px4 {
+  margin-left: var(--space-4);
+  margin-right: var(--space-4);
+}
+.p5 {
+  margin: var(--space-5);
+}
+.pt5 {
+  margin-top: var(--space-5);
+}
+.pr5 {
+  margin-right: var(--space-5);
+}
+.pb5 {
+  margin-bottom: var(--space-5);
+}
+.pl5 {
+  margin-left: var(--space-5);
+}
+.py5 {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+.px5 {
+  margin-left: var(--space-5);
+  margin-right: var(--space-5);
+}
+.p6 {
+  margin: var(--space-6);
+}
+.pt6 {
+  margin-top: var(--space-6);
+}
+.pr6 {
+  margin-right: var(--space-6);
+}
+.pb6 {
+  margin-bottom: var(--space-6);
+}
+.pl6 {
+  margin-left: var(--space-6);
+}
+.py6 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+.px6 {
+  margin-left: var(--space-6);
+  margin-right: var(--space-6);
+}
+.p7 {
+  margin: var(--space-7);
+}
+.pt7 {
+  margin-top: var(--space-7);
+}
+.pr7 {
+  margin-right: var(--space-7);
+}
+.pb7 {
+  margin-bottom: var(--space-7);
+}
+.pl7 {
+  margin-left: var(--space-7);
+}
+.py7 {
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-7);
+}
+.px7 {
+  margin-left: var(--space-7);
+  margin-right: var(--space-7);
+}
+.p8 {
+  margin: var(--space-8);
+}
+.pt8 {
+  margin-top: var(--space-8);
+}
+.pr8 {
+  margin-right: var(--space-8);
+}
+.pb8 {
+  margin-bottom: var(--space-8);
+}
+.pl8 {
+  margin-left: var(--space-8);
+}
+.py8 {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+.px8 {
+  margin-left: var(--space-8);
+  margin-right: var(--space-8);
+}
+.p9 {
+  margin: var(--space-9);
+}
+.pt9 {
+  margin-top: var(--space-9);
+}
+.pr9 {
+  margin-right: var(--space-9);
+}
+.pb9 {
+  margin-bottom: var(--space-9);
+}
+.pl9 {
+  margin-left: var(--space-9);
+}
+.py9 {
+  margin-top: var(--space-9);
+  margin-bottom: var(--space-9);
+}
+.px9 {
+  margin-left: var(--space-9);
+  margin-right: var(--space-9);
+}
+.p10 {
+  margin: var(--space-10);
+}
+.pt10 {
+  margin-top: var(--space-10);
+}
+.pr10 {
+  margin-right: var(--space-10);
+}
+.pb10 {
+  margin-bottom: var(--space-10);
+}
+.pl10 {
+  margin-left: var(--space-10);
+}
+.py10 {
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-10);
+}
+.px10 {
+  margin-left: var(--space-10);
+  margin-right: var(--space-10);
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.top-0 {
+  top: 0;
+}
+.right-0 {
+  right: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+.left-0 {
+  left: 0;
+}
+.z1 {
+  z-index: var(--z1);
+}
+.z2 {
+  z-index: var(--z2);
+}
+.z3 {
+  z-index: var(--z3);
+}
+.z4 {
+  z-index: var(--z4);
+}
+:root {
+  --z1: 1;
+  --z2: 2;
+  --z3: 3;
+  --z4: 4;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>旋转的地球</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            *{margin: 0px;padding: 0px;}
+            #content{width: 300px; height: 300px; border-radius: 150px; overflow:hidden; margin: 80px auto 0px;  position: relative;}
+            #mask{width: 300px; height: 300px; position: absolute; top: 0px; left: 0px; *background: url(http://images.cnblogs.com/cnblogs_com/kuikui/354173/r_round.png) center no-repeat;background: url(http://images.cnblogs.com/cnblogs_com/kuikui/354173/r_round.png) center no-repeat\0; z-index:999}
+            #box{position: absolute; left:0px; top: 0px;}
+            #box img{width:800px; height: 300px;}
+            #box .img1{position: absolute; top: 0px; left: 0px;}
+            #box .img2{position: absolute;top:0px; left: 800px;}
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <div id="mask"></div>
+            <div id="box">
+                <img class="img1" alt="" src="http://images.cnblogs.com/cnblogs_com/kuikui/354173/r_earth.jpg" />
+                <img class="img2" alt="" src="http://images.cnblogs.com/cnblogs_com/kuikui/354173/r_earth.jpg" />
+            </div>
+        </div>
+        <script type="text/javascript">
+            function $(id){return document.getElementById(id);}
+            var content = $("content");
+            var oBox = $("box");
+            var oBoxImg = oBox.getElementsByTagName("img")[0];
+            var oBoxImgW = oBoxImg.clientWidth;
+            var step = 0;
+            var auto;
+            function moving(){
+                auto = setInterval(function(){
+                    step--;
+                    if(oBox.offsetLeft<=-oBoxImgW){
+                        step=0;
+                    }
+                    oBox.style.left=step+"px";
+                },60);
+            }
+            
+            moving();
+            
+            content.onmousemove=function(event){
+                if(!(navigator.appVersion.match(/9./i)=="9.")&&(navigator.appVersion.match(/MSIE/gi)=="MSIE")){
+                    event = event || window.event;
+                    var x = event.offsetX;
+                    var y = event.offsetY;
+                    var tmp =Math.abs(x-150)*Math.abs(x-150)+Math.abs(y-150)*Math.abs(y-150);
+                    if(tmp<150*150){
+                        clearInterval(auto);
+                    }
+                }
+                else{
+                    clearInterval(auto);
+                }
+            }
+            
+            content.onmouseout=function(){
+                moving();
+            }
+        </script>
+    </body>
+</html>
+
+
+       

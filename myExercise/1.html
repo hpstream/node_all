@@ -63,13 +63,57 @@
             z-index: 1;
             background: rgba(119, 24, 197, 0.8);
         } */
+        .circle{
+            display: inline-block;
+            width: 600px;
+            transform: scale(0.5);
+            height: 600px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 54px #dddddd;
+            border: 1px solid transparent;
+            /* border: 1px solid pink; */
+            background: url(./earth.jpg);
+            background-size: 800px 690px;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            background-position-x: -364px;
+            position: absolute;
+            top: -5px;
+            animation: mymove 10s infinite linear;
+            /* -96 */
+        }
+        @keyframes mymove{
+        0%{  background-position-x: 0px ;  }
+        100% {  background-position-x: -800px }
+        }
+        @keyframes mymove1{
+            0%{  top: -5px ;  }
+            50%{ top: 5px ;}
+        100% {  top: -5px ;  }
+        }
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .mask{
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 1);
+        }
     </style>
 </head>
-<body>
-    <div class="ys est_selected">国内版</div>
+<body >
+    <div class="mask">
+    <!-- <div class="ys est_selected">国内版</div>
     <div class="ys ">国内版1</div>
-    <embed src="./search.svg" style="display:block;width:30px;height:30px" />
+    <embed src="./search.svg" style="display:block;width:30px;height:30px" /> -->
       
+
+    <div class="">
+        <div class="circle" style=""></div>
+    </div>
+  </div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
