@@ -4,8 +4,15 @@
         exec:function(editor){ 
             // alert("这是自定义按钮"); 
             // console.log(editor);
-
-            editor.insertHtml('<img src="https://static.kuaishebao.com/h5/ladder-top100/placeholder.png" />ee');
+            var data = '';
+            var mySelection = editor.getSelection();
+            if (CKEDITOR.env.ie) {
+                mySelection.unlock(true);
+                data = mySelection.getNative().createRange().text;
+            } else {
+                data = mySelection.getNative();
+            }
+            editor.insertHtml('<b>'+data+'</b>');
         } 
     }, 
     //Section 2 : 创建自定义按钮、绑定方法 

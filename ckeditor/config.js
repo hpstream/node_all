@@ -11,6 +11,14 @@ CKEDITOR.editorConfig = function( config ) {
 	CKEDITOR.config.width = 500;
 	CKEDITOR.config.height = 500;
 	config.extraPlugins="linkbutton" ;
+	config.coreStyles_bold = {
+		element: 'b',
+		overrides: 'b'
+	};
+	CKEDITOR.config.coreStyles_italic = {
+		element: 'i',
+		overrides: 'i'
+	};
 	config.disallowedContent = 'img{width,height};img[width,height]';
  // 上传图片路径
  config.filebrowserImageUploadUrl = "/back/news/imageUpload.do";
