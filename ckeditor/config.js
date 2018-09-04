@@ -11,6 +11,7 @@ CKEDITOR.editorConfig = function( config ) {
 	CKEDITOR.config.width = 500;
 	CKEDITOR.config.height = 500;
 	config.extraPlugins="linkbutton" ;
+
 	config.coreStyles_bold = {
 		element: 'b',
 		overrides: 'b'
@@ -21,7 +22,14 @@ CKEDITOR.editorConfig = function( config ) {
 	};
 	config.disallowedContent = 'img{width,height};img[width,height]';
  // 上传图片路径
- config.filebrowserImageUploadUrl = "/back/news/imageUpload.do";
+//  config.filebrowserImageUploadUrl = "/back/news/imageUpload.do";
+config.allowedContent = "p u b i;span{!color,!font-size};a[href];img[!src,alt];";
+// config.pasteFromWordIgnoreFontFace = true;
+// config.forcePasteAsPlainText = 'allow-word';
+// config.pasteFromWordKeepsStructure = true; 
+// config.pasteFromWordRemoveStyle = true  ;
+// config.pasteFromWordRemoveFontStyles = true;  
+
 	config.toolbar  = [
 		['linkbutton','Source','-','Save','NewPage','Preview','-','Templates'],
 		['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
