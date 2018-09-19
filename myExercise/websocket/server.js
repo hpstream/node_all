@@ -20,16 +20,17 @@ let io = require('socket.io')(server);
 var clients = [];
 io.on("connection", function(socket){
 	clients.push(socket);
-	socket.send({count:clients.length});
+	// socket.send({count:clients.length});
+	broadcast();
 	socket.on('message',function(data){
 		//收到消息
 		broadcast(data);
 
 	});
 	socket.on('disconnect',function () {
-		clients = clients.splice(clients.indexOf(socket), 1)
+		clients = clients.splice(clients.indexOf(socket)-1, 1)
 		console.log(`${socket.id} 离开了`);
-		console.log(clients.length);
+		console.log(clients);
 		broadcast();
 
 	})
