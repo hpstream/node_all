@@ -1,5 +1,5 @@
 const { exec  } = require('child_process');
-const ls = exec ('npm -version');
+const ls = exec ('ls -l');
 
 ls.stdout.on('data', (data) => {
   console.log(`输出：${data}`);
