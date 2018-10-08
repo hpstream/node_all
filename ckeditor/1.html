@@ -34,11 +34,11 @@
 // https://static.kuaishebao.com/h5/ladder-top100/placeholder.png
 
 	// CKEDITOR.config.height = 500;
-	var s = '';
+	var s = '我是中国人';
 	  var instances =  CKEDITOR.replace( 'editor' );
 	  var s1 = unescape(s);
 	  var canvas = document.createElement("canvas");
-	  // instances.setData(s1)
+	  instances.setData(s1)
 		// console.log(instances);
 		$('#ss').on('click',function(){
 			var s1 = $('#btnss').append(instances.getData());

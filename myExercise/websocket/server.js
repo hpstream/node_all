@@ -41,7 +41,7 @@ function broadcast(data){
 		clients[i].send({count:clients.length,info:data});
 	}
 }
-server.listen(80);
+server.listen(8080);
 
 
 

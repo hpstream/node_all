@@ -2,7 +2,9 @@
 Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.md or https://ckeditor.com/legal/terms-of-use/#open-source-licences
 */
-
+html{
+	font-size: 16px;
+}
 body
 {
 	/* Font */
@@ -20,7 +22,7 @@ body
 
 .cke_editable
 {
-	font-size: 13px;
+	font-size: 1rem;
 	line-height: 1.6;
 
 	/* Fix for missing scrollbars with RTL texts. (#10488) */
