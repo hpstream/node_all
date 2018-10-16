@@ -25,12 +25,12 @@ CKEDITOR.editorConfig = function( config ) {
  // 上传图片路径
 //  config.filebrowserImageUploadUrl = "/back/news/imageUpload.do";
 // 允许进入标签
-// config.allowedContent = "p u b i;span{!color,!font-size};a[href];img[!src,alt];";
-// config.pasteFromWordIgnoreFontFace = true;
-// config.forcePasteAsPlainText = 'allow-word';
-// config.pasteFromWordKeepsStructure = true; 
-// config.pasteFromWordRemoveStyle = true  ;
-// config.pasteFromWordRemoveFontStyles = true;  
+config.allowedContent = "p u b i;span{!color,!font-size};a[href,id,name];img[!src,alt];";
+config.pasteFromWordIgnoreFontFace = true;
+config.forcePasteAsPlainText = 'allow-word';
+config.pasteFromWordKeepsStructure = true; 
+config.pasteFromWordRemoveStyle = true  ;
+config.pasteFromWordRemoveFontStyles = true;  
 
 	config.toolbar  = [
 		['linkbutton','Source','-','Save','NewPage','Preview','-','Templates'],

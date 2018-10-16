@@ -7,14 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
+<style>
+    .img{
+        height: 500px;
+        display: flex;
+        border: 1px solid pink;
+        justify-content:center;
+        align-items: center; 
+    }
+    
+    img{
+        height: 45px;
+        width: 80%;
+    }
+</style>
 <body>
     <div id='app'>
         {{msg}} + {{count}} = {{count1}}
         <button @click='increment'>+</button>
         <button>-</button>
     </div>
-
+   
+    <div class='img'>
+        <img src="https://qiniustatic.wodidashi.com/wim/img/btn_bg.png" alt="">
+    </div>
 </body>
 <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
 <script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script>
