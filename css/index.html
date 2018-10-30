@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.wrap{
+    height: 80px;
+    width: 80px;
+    background-image: url('./1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 0px ;
+    background-position-x: 0 ;
+    animation: dot 1s 1 steps(18,end);
+    animation-fill-mode: forwards;
+}
+@keyframes dot {
+    0%{
+        background-position-x: 0% ; 
+    }
+
+    100%{
+        background-position-x: 99.8%;
+    }
+}
+</style>
+<body>
+    <div class='wrap'>
+    </div>
+</body>
+</html>
