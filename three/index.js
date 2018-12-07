@@ -134,31 +134,10 @@ renderer.domElement.addEventListener('mousemove', function (e) {
     if (isdown) {
         x1 = (e.clientX - x0) * Math.PI / 180;
         y1 = (e.clientY - y0) * Math.PI / 180;
-        // mouse.x = x1;
-        // mouse.y = y1;
-        // camera.position.x = x + x1;
-        // camera.position.y = y + y1;
-
-        //将鼠标点击位置的屏幕坐标转成threejs中的标准坐标,具体解释见代码释义
-        mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
-        //新建一个三维单位向量 假设z方向就是0.5
-        //根据照相机，把这个向量转换到视点坐标系
-        var vector = new THREE.Vector3(mouse.x, mouse.y, 0).unproject(camera);
-
-        //在视点坐标系中形成射线,射线的起点向量是照相机， 射线的方向向量是照相机到点击的点，这个向量应该归一标准化。
-        var raycaster = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
-
-        //射线和模型求交，选中一系列直线
-        var intersects = raycaster.intersectObjects(scene.children);
-        console.log('imtersrcts=' + intersects)
-
-        if (intersects.length > 0) {
-            //选中第一个射线相交的物体
-            SELECTED = intersects[0].object;
-            var intersected = intersects[0].object;
-            console.log(intersects[0].object)
-        }
+        mouse.x = x1;
+        mouse.y = y1;
+        camera.position.x = x + x1;
+        camera.position.y = y + y1;
 
     }
 })

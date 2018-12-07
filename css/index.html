@@ -31,5 +31,17 @@
 <body>
     <div class='wrap'>
     </div>
+    <blue-buy sku="t_porsche"></blue-buy>
 </body>
+<script>
+class BlueBuy extends HTMLElement {
+    constructor() {
+        super();
+        console.log(this.getAttribute('sku'))
+        this.innerHTML = `<button type="button">buy for 66,00 €</button>`;
+    }
+    disconnectedCallback() { }
+}
+window.customElements.define('blue-buy', BlueBuy);
+</script>
 </html>

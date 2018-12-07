@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="step1Canvas" >
+        您的浏览器不支持HTML5，请尝试其他浏览器！
+    </canvas>
+</body>
+<script>
+    function timer(id, start, end, interval) {
+        window.setTimeout(function () {
+            circle(id, start / 100);
+            start++;
+            if (start < end + 1) {
+                timer(id, start, end, interval);
+            }
+        }, interval);
+    }
+    timer('step1Canvas', '0', '100', 1000 / 60)
+    function circle(id, percent) {
+        var p = (percent * 100).toFixed(0);
+        var c = document.getElementById(id);
+        var cxt = c.getContext("2d");
+        let width = c.width,height=c.height;
+        if (window.devicePixelRatio) {
+            c.style.width = width + "px";
+            c.style.height = height + "px";
+            c.height = height * window.devicePixelRatio;
+            c.width = width * window.devicePixelRatio;
+            cxt.scale(window.devicePixelRatio, window.devicePixelRatio);
+        }
+        //生成圆形（底圆）
+        cxt.strokeStyle = "#D0D0D0";
+        cxt.lineWidth = 5;
+        cxt.beginPath();
+        // cxt.moveTo(75, 75);
+        cxt.arc(75, 75, 70, 0, Math.PI*1.2, false);
+        // cxt.closePath();
+        cxt.stroke();
+
+        cxt.strokeStyle = "#ff0000";
+        cxt.lineWidth = 5;
+        cxt.beginPath();
+        // cxt.moveTo(75, 75);
+        cxt.arc(75, 75, 70, 0, Math.PI*0.6, false);
+        cxt.stroke();
+        // cxt.fill();
+        //生成扇形
+        // cxt.fillStyle = "#0268BD";
+        // cxt.beginPath();
+        // cxt.moveTo(75, 75);
+        // if (percent == 1) {
+        //     cxt.arc(75, 75, 70, 0, Math.PI * 2, false);
+        // } else if (percent == 0) {
+        //     cxt.arc(75, 75, 70, 0, 0, true);
+        // } else {
+        //     cxt.arc(75, 75, 70, Math.PI, Math.PI + Math.PI * 2 * percent, false);
+        // }
+        // cxt.closePath();
+        // cxt.fill();
+        //生成圆形（上层园）
+        // cxt.fillStyle = "#FFFFFF";
+        // cxt.beginPath();
+        // cxt.moveTo(75, 75);
+        // cxt.arc(75, 75, 65, 0, Math.PI * 2, false);
+        // cxt.closePath();
+        // cxt.fill();
+        //生成中间百分比文字
+        // cxt.font = "20px arial";
+        // cxt.fillStyle = "#000000";
+        // cxt.fillText(p + "%", 55, 75); 
+        //  cxt.fillText("0%",160,75);
+    }
+</script>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- Include stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.bubble.css">
+</head>
+
+<body>
+
+    <!-- Create the editor container -->
+    <div id="toolbar">
+        <!-- Add font size dropdown -->
+        <select class="ql-size">
+            <option value="small"></option>
+            <!-- Note a missing, thus falsy value, is used to reset to default -->
+            <option selected></option>
+            <option value="large"></option>
+            <option value="huge"></option>
+        </select>
+        <!-- Add a bold button -->
+        <button class="ql-bold"></button>
+        <!-- Add subscript and superscript buttons -->
+        <button class="ql-script" value="sub"></button>
+        <button class="ql-script" value="super"></button>
+    </div>
+    <div id="editor">
+        <p>Hello World!</p>
+        <p>Some initial <strong>bold</strong> text</p>
+        <p><br></p>
+    </div>
+
+
+</body>
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<!-- Initialize Quill editor -->
+<script>
+    var toolbarOptions = [['bold', 'italic'], ['link', 'image']];;
+
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        modules: {
+            toolbar: '#toolbar'
+        }
+    });
+    quill.on('text-change', function (delta, oldDelta, source) {
+        if (source == 'api') {
+            console.log(delta);
+        } else if (source == 'user') {
+            console.log(delta);
+            quill.setSelection(0, 5);
+        }
+        console.log(quill.getContents());
+    })
+    quill.clipboard.addMatcher(Node.TEXT_NODE, function (node, delta) {
+        console.log(delta)
+        return delta().insert(node.data);
+    });
+    quill.scrollingContainer.addEventListener("paste", function (e) {
+        var text = e.clipboardData.getData("text/plain");
+
+        // document.execCommand("insertText", true, text);
+    });
+</script>
+
+</html>

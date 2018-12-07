@@ -53,7 +53,10 @@
     }
 
     function initLight() {
-
+        // 创建一个灯光
+        light = new THREE.DirectionalLight(0xffffff, 1.0, 1);
+        light.position.set(100, 100, 200);
+        scene.add(light);
     }
 
     function initModel() {

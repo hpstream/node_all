@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title><br />
+    </head>
+    <body>
+     <div>
+         <h5>您最喜欢哪门语言</h5>
+            <label><input class="radio" type="radio" name="radio" > java</label>
+            <label><input class="radio" type="radio" name="radio"> php</label>
+            <label><input class="radio" type="radio" name="radio"> python</label>
+            <label><input class="radio" type="radio" name="radio" checked> JavaScript</label>
+        </div>      
+        <br />
+     <div>
+         <h5>您最喜欢那些城市</h6>
+            <label><input class="checkbox" type="checkbox"  checked> 北京</label>
+            <label><input class="checkbox" type="checkbox" checked> 上海</label>
+            <label><input class="checkbox" type="checkbox" checked> 杭州</label>
+            <label><input class="checkbox" type="checkbox" checked> 西安</label>
+       </div>
+      <style>
+        input{
+            outline: none;
+        }
+        .radio,.checkbox {
+            width: 1.2rem;
+            height: 1.2rem;
+            background-color: #ffffff;
+            border: solid 1px #dddddd;
+            -webkit-border-radius: 0.6rem;
+            border-radius: 0.6rem;
+            font-size: 0.8rem;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            cursor: default;
+            -webkit-appearance: none;  /**隐藏原生控件**/
+        }
+                
+        .checkbox {
+            border-radius: 0.1rem;   /**复选框的圆角要小一些**/
+        }
+        /**选择后的样式**/
+        .radio:checked,.checkbox:checked{
+            background-color: #04c9e8;
+            border: solid 1px #00adc8;
+            box-shadow: 0 1px 1px rgba(0,0,0,.1);
+            text-align: center;
+            background-clip: padding-box;
+        }
+         /**选择后 里面小对勾样式**/
+        .radio:checked:before,.checkbox:checked:before{
+            content: '';
+            width: 0.5rem;
+            height: 0.3rem;
+            border: 1px solid #ffffff;
+            border-top: none;
+            border-right: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -0.25rem;
+            margin-top: -0.25rem;
+            -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+        }
+       </style> 
+    </body>
+</html>
+
+作者：guiLing
+链接：https://www.jianshu.com/p/a657b6d13369
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
