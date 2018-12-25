@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Hls.js demo - basic usage</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <h1>Hls.js demo - basic usage</h1>
+    <video height="600" id="video" controls></video>
+
+
+
+</body>
+<script>
+    if (Hls.isSupported()) {
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('https://qiniustatic.wodidashi.com/audio/71459aba-9e95-4e8e-a402-2beec43aae03.amr?avvod/m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+            video.play();
+        });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+        video.addEventListener('canplay', function () {
+            video.play();
+        });
+    }
+</script>
+
+</html>

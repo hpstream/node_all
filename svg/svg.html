@@ -18,6 +18,11 @@
             <path d="M 50 50 m 0 -47 a 47 47 0 1 1 0 94 a 47 47 0 1 1 0 -94" stroke-linecap="round" stroke="#ff4949" stroke-width="4.8" fill="none" class="el-progress-circle__path" style="stroke-dasharray: 299.08px, 299.08px; stroke-dashoffset: 149.54px; transition: stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease 0s;"></path>
         </svg>
     </div>
+    <!-- <div style='height: 200px;width: 200px;'>
+        <svg viewBox="0 0 200 200">
+            <path d="m 40 80 a 50 50 0 1 1 35 25"stroke="#e5e9f2" stroke-width="2" fill="none" class="el-progress-circle__track"></path>
+        </svg>
+    </div> -->
 </body>
 <script>
     function timer(id, start, end, interval) {
@@ -29,7 +34,7 @@
             }
         }, interval);
     }
-    timer('step1Canvas', '0', '100', 1000 / 60)
+    // timer('step1Canvas', '0', '100', 1000)
     function circle(id, percent) {
         var p = (percent * 100).toFixed(0);
         var c = document.getElementById(id);

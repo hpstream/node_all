@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var AudioContext = window.AudioContext || window.webkitAudioContext;
+    var context = new AudioContext();
+
+    function loadDogSound(url) {
+        var request = new XMLHttpRequest();
+        request.open('GET', url, true);
+        request.responseType = 'arraybuffer';
+
+
+        //下面就是对音频文件的异步解析
+        request.onload = function () {
+            context.decodeAudioData(request.response, function (buffer) {
+                var s = buffer;
+            }, function(){});
+        }
+
+        request.send();
+    }
+    loadDogSound('https://qiniustatic.wodidashi.com/audio/Qg5lkmgd3ZlFg');
+    function playSound(buffer) {
+        var source = context.createBufferSource();
+        source = context.createBuffersource();//创建一个音频源 相当于是装音频的容器
+        source.buffer = buffer;//  告诉音频源 播放哪一段音频
+        source.connect(context.destination);// 连接到输出源
+        source.start(0);//开始播放
+    }
+</script>
+
+</html>
