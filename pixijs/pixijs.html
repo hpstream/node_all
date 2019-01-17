@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+</head>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.2/pixi.min.js"></script>
+
+<body>
+
+</body>
+<script type="text/javascript">
+    let type = "WebGL"
+    if (!PIXI.utils.isWebGLSupported()) {
+        type = "canvas"
+    }
+
+    PIXI.utils.sayHello(type)
+
+    // 创建一个Pixi 应用
+    let app = new PIXI.Application({ width: window.innerWidth, height: window.innerHeight });
+    app.renderer.backgroundColor = 0xffffff;
+    let TextureCache = PIXI.utils.TextureCache;
+    let Rectangle = PIXI.Rectangle;
+    let Sprite = PIXI.Sprite;
+    // 把 Pixi 应用中创建出来的 canvas 添加到页面上
+    document.body.appendChild(app.view);
+
+    PIXI.loader
+        .add("./1.png")
+        .load(setup);
+
+
+    //This `setup` function will run when the image has loaded
+    function setup() {
+
+        //Create the cat sprite
+
+        // 拿到一张图片
+        var hero = new Hero("./1.png", 8)
+        app.stage.interactive = true
+
+        app.stage.click = function (data) {
+            console.log(data);
+            //alert('you hit the stage')
+        }
+        hero.sprite.width = 200;
+        hero.sprite.height = 200;
+        //Add the cat to the stage
+        app.stage.addChild(hero.sprite);
+        app.ticker.add(delta => {
+            // i++;
+            // let rectangle = new Rectangle((Math.floor(i / 15)) % 4 * 192 / 4, 0, 192 / 4, 256 / 4);
+            // texture.frame = rectangle;
+            hero.right();
+
+        });
+    }
+    class Hero {
+        constructor(textureurl, frame) {
+            this.width = 48;
+            this.height = 64;
+            this.texture = TextureCache[textureurl];
+            let rectangle = new Rectangle(0, 0, this.width, this.height);
+            this.texture.frame = rectangle;
+            this.sprite = new Sprite(this.texture);
+            this.frame = frame || 1;
+            this.i = 0;
+        }
+        clock() {
+            if (this.i > this.width * 4) this.i = 0;
+            return (Math.floor(++this.i / this.frame)) % 4;
+
+        }
+        forward() {
+            let rectangle = new Rectangle(this.clock() * this.width, 0, this.width, this.height);
+            this.texture.frame = rectangle;
+        }
+        left() {
+            let rectangle = new Rectangle(this.clock() * this.width, this.height, this.width, this.height);
+            this.texture.frame = rectangle;
+        }
+        right() {
+            let rectangle = new Rectangle(this.clock() * this.width, 2 * this.height, this.width, this.height);
+            this.texture.frame = rectangle;
+        }
+        back() {
+            let rectangle = new Rectangle(this.clock() * this.width, 3 * this.height, this.width, this.height);
+            this.texture.frame = rectangle;
+        }
+    }
+</script>
+
+</html>

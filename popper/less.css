@@ -1,0 +1,144 @@
+img {
+  position: absolute;
+  width: 100px;
+  top: 0;
+  left: 0;
+  animation-name: loader1;
+  animation-duration: 4s;
+  animation-timing-function: steps(1, end);
+  animation-iteration-count: 1;
+  /* animation-direction */
+  /* animation-fill-mode	 */
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+}
+@keyframes loader1 {
+  0% {
+    top: 0;
+    left: 100px;
+  }
+  7.07106781% {
+    top: 0;
+    left: 200px;
+  }
+  10% {
+    top: 100px;
+    left: 200px;
+  }
+  12.24744871% {
+    top: 200px;
+    left: 200px;
+  }
+  14.14213562% {
+    top: 200px;
+    left: 100px;
+  }
+  15.8113883% {
+    top: 200px;
+    left: 0px;
+  }
+  17.32050808% {
+    top: 100px;
+    left: 0px;
+  }
+  18.70828693% {
+    top: 0;
+    left: 0px;
+  }
+  21.25% {
+    top: 0;
+    left: 100px;
+  }
+  22.5% {
+    top: 0;
+    left: 200px;
+  }
+  23.75% {
+    top: 100px;
+    left: 200px;
+  }
+  25% {
+    top: 200px;
+    left: 200px;
+  }
+  26.25% {
+    top: 200px;
+    left: 100px;
+  }
+  27.5% {
+    top: 200px;
+    left: 0px;
+  }
+  28.75% {
+    top: 100px;
+    left: 0px;
+  }
+  30% {
+    top: 0;
+    left: 0px;
+  }
+  31.25% {
+    top: 0;
+    left: 100px;
+  }
+  32.5% {
+    top: 0;
+    left: 200px;
+  }
+  33.75% {
+    top: 100px;
+    left: 200px;
+  }
+  35% {
+    top: 200px;
+    left: 200px;
+  }
+  36.25% {
+    top: 200px;
+    left: 100px;
+  }
+  37.5% {
+    top: 200px;
+    left: 0px;
+  }
+  38.75% {
+    top: 100px;
+    left: 0px;
+  }
+  40% {
+    top: 0;
+    left: 0px;
+  }
+  40.74074074% {
+    top: 0;
+    left: 100px;
+  }
+  42.96296296% {
+    top: 0;
+    left: 200px;
+  }
+  46.66666667% {
+    top: 100px;
+    left: 200px;
+  }
+  51.85185185% {
+    top: 200px;
+    left: 200px;
+  }
+  58.51851852% {
+    top: 200px;
+    left: 100px;
+  }
+  66.66666667% {
+    top: 200px;
+    left: 0px;
+  }
+  76.2962963% {
+    top: 100px;
+    left: 0px;
+  }
+  87.40740741% {
+    top: 0;
+    left: 0px;
+  }
+}

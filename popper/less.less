@@ -1,0 +1,92 @@
+
+img {
+    position: absolute;
+    width: 100px;
+    top: 0;
+    left: 0;
+    animation-name: loader1;
+    animation-duration:4s;
+    animation-timing-function:steps(1,end);
+    animation-iteration-count: 1;
+    /* animation-direction */
+    /* animation-fill-mode	 */
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+// ==================== 
+
+//匀速版本。
+// .generickeyframe(@name;@framelist;@time){ 
+//     @length:length(@framelist) * @time ;
+//     @keyframes @name{ 
+//     .loop-framelist(@index) when (@index <= @length){ 
+//         @framepos: (@index - 1) * 100/@length * 1%; 
+//         @cuutent: mod(@index, length(@framelist)) + 1;
+//         @{framepos}{ 
+//             @props: extract(@framelist, @cuutent); 
+//             @props(); 
+//             } 
+//         .loop-framelist(@index+1); 
+//     } 
+//     .loop-framelist(1); 
+//     } 
+// } 
+// .generickeyframe(loader1; 
+//     {top: 0; left: 0px;},
+//     {top: 0; left: 100px;},
+//     {top: 0; left: 200px;},
+//     {top: 100px; left: 200px;},
+//     {top: 200px; left: 200px;},
+//     {top: 200px; left: 100px;},
+//     {top: 200px; left: 0px;},
+//     {top: 100px; left: 0px;};
+//     4
+// ); 
+// =========================
+
+.generickeyframe(@name;@framelist;@time){ 
+    @length:length(@framelist) * @time ;
+    @keyframes @name{ 
+    .loop-framelist(@index) when (@index <= @length){ 
+        .mixin (@index) when (@index<=8){
+            @framepos: 20/sqrt(8) * sqrt(@index - 1) * 1%; 
+            @cuutent: mod(@index, length(@framelist)) + 1;
+            @{framepos}{ 
+                @props: extract(@framelist, @cuutent); 
+                @props(); 
+            } 
+        }
+        .mixin (@index) when (@index<24) and (@index>8) {
+            @framepos: 20 + 20 /16 * (@index - 8) * 1%; 
+            @cuutent: mod(@index, length(@framelist)) + 1;
+            @{framepos}{ 
+                @props: extract(@framelist, @cuutent); 
+                @props(); 
+            } 
+        }
+        .mixin (@index) when (@index>=24){
+            @framepos: 40 + 60 / 81 * pow(@index - 24,2)  * 1%; 
+            @cuutent: mod(@index, length(@framelist)) + 1;
+            @{framepos}{ 
+                @props: extract(@framelist, @cuutent); 
+                @props(); 
+            } 
+        }
+        .mixin(@index);
+        .loop-framelist(@index+1); 
+    } 
+    .loop-framelist(1); 
+    } 
+} 
+.generickeyframe(loader1; 
+    {top: 0; left: 0px;},
+    {top: 0; left: 100px;},
+    {top: 0; left: 200px;},
+    {top: 100px; left: 200px;},
+    {top: 200px; left: 200px;},
+    {top: 200px; left: 100px;},
+    {top: 200px; left: 0px;},
+    {top: 100px; left: 0px;};
+    4
+); 
+    

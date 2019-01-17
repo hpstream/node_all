@@ -103,7 +103,26 @@
     );
     console.log(anotherPopper);
 
-
+ class demo {
+     constructor(){
+         this.events = {};
+     }
+    
+    on(type,fn){
+        this.events[type] = this.events[type]?this.events[type]:[];
+        this.events[type].push(fn);
+    }
+    emit(type,params){
+        for(let i=0;i<this.events[type].length;i++){
+         this.events[type][i](params);
+        }
+    }
+     
+ }
+ var demo1 = new demo();
+ console.log(demo1)
+//  demo1.on('abc',function(p){console.log(p)});
+//  demo1.emit('abc','eee')
 
 </script>
 </html>
