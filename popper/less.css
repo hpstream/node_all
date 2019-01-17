@@ -4,7 +4,7 @@ img {
   top: 0;
   left: 0;
   animation-name: loader1;
-  animation-duration: 4s;
+  animation-duration: 5s;
   animation-timing-function: steps(1, end);
   animation-iteration-count: 1;
   /* animation-direction */
@@ -15,130 +15,840 @@ img {
 @keyframes loader1 {
   0% {
     top: 0;
-    left: 100px;
+    left: 0px;
   }
   7.07106781% {
     top: 0;
-    left: 200px;
+    left: 100px;
   }
   10% {
-    top: 100px;
+    top: 0;
     left: 200px;
   }
   12.24744871% {
-    top: 200px;
+    top: 100px;
     left: 200px;
   }
   14.14213562% {
     top: 200px;
-    left: 100px;
+    left: 200px;
   }
   15.8113883% {
     top: 200px;
-    left: 0px;
+    left: 100px;
   }
   17.32050808% {
-    top: 100px;
+    top: 200px;
     left: 0px;
   }
   18.70828693% {
-    top: 0;
-    left: 0px;
-  }
-  21.25% {
-    top: 0;
-    left: 100px;
-  }
-  22.5% {
-    top: 0;
-    left: 200px;
-  }
-  23.75% {
-    top: 100px;
-    left: 200px;
-  }
-  25% {
-    top: 200px;
-    left: 200px;
-  }
-  26.25% {
-    top: 200px;
-    left: 100px;
-  }
-  27.5% {
-    top: 200px;
-    left: 0px;
-  }
-  28.75% {
     top: 100px;
     left: 0px;
   }
-  30% {
+  20% {
     top: 0;
     left: 0px;
   }
-  31.25% {
-    top: 0;
-    left: 100px;
-  }
-  32.5% {
-    top: 0;
-    left: 200px;
-  }
-  33.75% {
-    top: 100px;
-    left: 200px;
-  }
-  35% {
-    top: 200px;
-    left: 200px;
-  }
-  36.25% {
-    top: 200px;
-    left: 100px;
-  }
-  37.5% {
-    top: 200px;
-    left: 0px;
-  }
-  38.75% {
-    top: 100px;
-    left: 0px;
-  }
-  40% {
-    top: 0;
-    left: 0px;
-  }
-  40.74074074% {
+  20.85714286% {
     top: 0;
     left: 100px;
   }
-  42.96296296% {
+  21.71428571% {
     top: 0;
     left: 200px;
   }
-  46.66666667% {
+  22.57142857% {
     top: 100px;
     left: 200px;
   }
-  51.85185185% {
+  23.42857143% {
     top: 200px;
     left: 200px;
   }
-  58.51851852% {
+  24.28571429% {
     top: 200px;
     left: 100px;
   }
-  66.66666667% {
+  25.14285714% {
     top: 200px;
     left: 0px;
   }
-  76.2962963% {
+  26% {
     top: 100px;
     left: 0px;
   }
-  87.40740741% {
+  26.85714286% {
     top: 0;
     left: 0px;
+  }
+  27.71428571% {
+    top: 0;
+    left: 100px;
+  }
+  28.57142857% {
+    top: 0;
+    left: 200px;
+  }
+  29.42857143% {
+    top: 100px;
+    left: 200px;
+  }
+  30.28571429% {
+    top: 200px;
+    left: 200px;
+  }
+  31.14285714% {
+    top: 200px;
+    left: 100px;
+  }
+  32% {
+    top: 200px;
+    left: 0px;
+  }
+  32.85714286% {
+    top: 100px;
+    left: 0px;
+  }
+  33.71428571% {
+    top: 0;
+    left: 0px;
+  }
+  34.57142857% {
+    top: 0;
+    left: 100px;
+  }
+  35.42857143% {
+    top: 0;
+    left: 200px;
+  }
+  36.28571429% {
+    top: 100px;
+    left: 200px;
+  }
+  37.14285714% {
+    top: 200px;
+    left: 200px;
+  }
+  38% {
+    top: 200px;
+    left: 100px;
+  }
+  38.85714286% {
+    top: 200px;
+    left: 0px;
+  }
+  39.71428571% {
+    top: 100px;
+    left: 0px;
+  }
+  40.57142857% {
+    top: 0;
+    left: 0px;
+  }
+  41.42857143% {
+    top: 0;
+    left: 100px;
+  }
+  42.28571429% {
+    top: 0;
+    left: 200px;
+  }
+  43.14285714% {
+    top: 100px;
+    left: 200px;
+  }
+  44% {
+    top: 200px;
+    left: 200px;
+  }
+  44.85714286% {
+    top: 200px;
+    left: 100px;
+  }
+  45.71428571% {
+    top: 200px;
+    left: 0px;
+  }
+  46.57142857% {
+    top: 100px;
+    left: 0px;
+  }
+  47.42857143% {
+    top: 0;
+    left: 0px;
+  }
+  48.28571429% {
+    top: 0;
+    left: 100px;
+  }
+  49.14285714% {
+    top: 0;
+    left: 200px;
+  }
+  50% {
+    top: 100px;
+    left: 200px;
+  }
+  50.78125% {
+    top: 200px;
+    left: 200px;
+  }
+  53.125% {
+    top: 200px;
+    left: 100px;
+  }
+  57.03125% {
+    top: 200px;
+    left: 0px;
+  }
+  62.5% {
+    top: 100px;
+    left: 0px;
+  }
+  69.53125% {
+    top: 0;
+    left: 0px;
+  }
+  78.125% {
+    top: 0;
+    left: 100px;
+  }
+  88.28125% {
+    top: 0;
+    left: 200px;
+  }
+  100% {
+    top: 100px;
+    left: 200px;
+  }
+}
+@-moz-keyframes loader1 {
+  0% {
+    top: 0;
+    left: 0px;
+  }
+  7.07106781% {
+    top: 0;
+    left: 100px;
+  }
+  10% {
+    top: 0;
+    left: 200px;
+  }
+  12.24744871% {
+    top: 100px;
+    left: 200px;
+  }
+  14.14213562% {
+    top: 200px;
+    left: 200px;
+  }
+  15.8113883% {
+    top: 200px;
+    left: 100px;
+  }
+  17.32050808% {
+    top: 200px;
+    left: 0px;
+  }
+  18.70828693% {
+    top: 100px;
+    left: 0px;
+  }
+  20% {
+    top: 0;
+    left: 0px;
+  }
+  20.85714286% {
+    top: 0;
+    left: 100px;
+  }
+  21.71428571% {
+    top: 0;
+    left: 200px;
+  }
+  22.57142857% {
+    top: 100px;
+    left: 200px;
+  }
+  23.42857143% {
+    top: 200px;
+    left: 200px;
+  }
+  24.28571429% {
+    top: 200px;
+    left: 100px;
+  }
+  25.14285714% {
+    top: 200px;
+    left: 0px;
+  }
+  26% {
+    top: 100px;
+    left: 0px;
+  }
+  26.85714286% {
+    top: 0;
+    left: 0px;
+  }
+  27.71428571% {
+    top: 0;
+    left: 100px;
+  }
+  28.57142857% {
+    top: 0;
+    left: 200px;
+  }
+  29.42857143% {
+    top: 100px;
+    left: 200px;
+  }
+  30.28571429% {
+    top: 200px;
+    left: 200px;
+  }
+  31.14285714% {
+    top: 200px;
+    left: 100px;
+  }
+  32% {
+    top: 200px;
+    left: 0px;
+  }
+  32.85714286% {
+    top: 100px;
+    left: 0px;
+  }
+  33.71428571% {
+    top: 0;
+    left: 0px;
+  }
+  34.57142857% {
+    top: 0;
+    left: 100px;
+  }
+  35.42857143% {
+    top: 0;
+    left: 200px;
+  }
+  36.28571429% {
+    top: 100px;
+    left: 200px;
+  }
+  37.14285714% {
+    top: 200px;
+    left: 200px;
+  }
+  38% {
+    top: 200px;
+    left: 100px;
+  }
+  38.85714286% {
+    top: 200px;
+    left: 0px;
+  }
+  39.71428571% {
+    top: 100px;
+    left: 0px;
+  }
+  40.57142857% {
+    top: 0;
+    left: 0px;
+  }
+  41.42857143% {
+    top: 0;
+    left: 100px;
+  }
+  42.28571429% {
+    top: 0;
+    left: 200px;
+  }
+  43.14285714% {
+    top: 100px;
+    left: 200px;
+  }
+  44% {
+    top: 200px;
+    left: 200px;
+  }
+  44.85714286% {
+    top: 200px;
+    left: 100px;
+  }
+  45.71428571% {
+    top: 200px;
+    left: 0px;
+  }
+  46.57142857% {
+    top: 100px;
+    left: 0px;
+  }
+  47.42857143% {
+    top: 0;
+    left: 0px;
+  }
+  48.28571429% {
+    top: 0;
+    left: 100px;
+  }
+  49.14285714% {
+    top: 0;
+    left: 200px;
+  }
+  50% {
+    top: 100px;
+    left: 200px;
+  }
+  50.78125% {
+    top: 200px;
+    left: 200px;
+  }
+  53.125% {
+    top: 200px;
+    left: 100px;
+  }
+  57.03125% {
+    top: 200px;
+    left: 0px;
+  }
+  62.5% {
+    top: 100px;
+    left: 0px;
+  }
+  69.53125% {
+    top: 0;
+    left: 0px;
+  }
+  78.125% {
+    top: 0;
+    left: 100px;
+  }
+  88.28125% {
+    top: 0;
+    left: 200px;
+  }
+  100% {
+    top: 100px;
+    left: 200px;
+  }
+}
+@-webkit-keyframes loader1 {
+  0% {
+    top: 0;
+    left: 0px;
+  }
+  7.07106781% {
+    top: 0;
+    left: 100px;
+  }
+  10% {
+    top: 0;
+    left: 200px;
+  }
+  12.24744871% {
+    top: 100px;
+    left: 200px;
+  }
+  14.14213562% {
+    top: 200px;
+    left: 200px;
+  }
+  15.8113883% {
+    top: 200px;
+    left: 100px;
+  }
+  17.32050808% {
+    top: 200px;
+    left: 0px;
+  }
+  18.70828693% {
+    top: 100px;
+    left: 0px;
+  }
+  20% {
+    top: 0;
+    left: 0px;
+  }
+  20.85714286% {
+    top: 0;
+    left: 100px;
+  }
+  21.71428571% {
+    top: 0;
+    left: 200px;
+  }
+  22.57142857% {
+    top: 100px;
+    left: 200px;
+  }
+  23.42857143% {
+    top: 200px;
+    left: 200px;
+  }
+  24.28571429% {
+    top: 200px;
+    left: 100px;
+  }
+  25.14285714% {
+    top: 200px;
+    left: 0px;
+  }
+  26% {
+    top: 100px;
+    left: 0px;
+  }
+  26.85714286% {
+    top: 0;
+    left: 0px;
+  }
+  27.71428571% {
+    top: 0;
+    left: 100px;
+  }
+  28.57142857% {
+    top: 0;
+    left: 200px;
+  }
+  29.42857143% {
+    top: 100px;
+    left: 200px;
+  }
+  30.28571429% {
+    top: 200px;
+    left: 200px;
+  }
+  31.14285714% {
+    top: 200px;
+    left: 100px;
+  }
+  32% {
+    top: 200px;
+    left: 0px;
+  }
+  32.85714286% {
+    top: 100px;
+    left: 0px;
+  }
+  33.71428571% {
+    top: 0;
+    left: 0px;
+  }
+  34.57142857% {
+    top: 0;
+    left: 100px;
+  }
+  35.42857143% {
+    top: 0;
+    left: 200px;
+  }
+  36.28571429% {
+    top: 100px;
+    left: 200px;
+  }
+  37.14285714% {
+    top: 200px;
+    left: 200px;
+  }
+  38% {
+    top: 200px;
+    left: 100px;
+  }
+  38.85714286% {
+    top: 200px;
+    left: 0px;
+  }
+  39.71428571% {
+    top: 100px;
+    left: 0px;
+  }
+  40.57142857% {
+    top: 0;
+    left: 0px;
+  }
+  41.42857143% {
+    top: 0;
+    left: 100px;
+  }
+  42.28571429% {
+    top: 0;
+    left: 200px;
+  }
+  43.14285714% {
+    top: 100px;
+    left: 200px;
+  }
+  44% {
+    top: 200px;
+    left: 200px;
+  }
+  44.85714286% {
+    top: 200px;
+    left: 100px;
+  }
+  45.71428571% {
+    top: 200px;
+    left: 0px;
+  }
+  46.57142857% {
+    top: 100px;
+    left: 0px;
+  }
+  47.42857143% {
+    top: 0;
+    left: 0px;
+  }
+  48.28571429% {
+    top: 0;
+    left: 100px;
+  }
+  49.14285714% {
+    top: 0;
+    left: 200px;
+  }
+  50% {
+    top: 100px;
+    left: 200px;
+  }
+  50.78125% {
+    top: 200px;
+    left: 200px;
+  }
+  53.125% {
+    top: 200px;
+    left: 100px;
+  }
+  57.03125% {
+    top: 200px;
+    left: 0px;
+  }
+  62.5% {
+    top: 100px;
+    left: 0px;
+  }
+  69.53125% {
+    top: 0;
+    left: 0px;
+  }
+  78.125% {
+    top: 0;
+    left: 100px;
+  }
+  88.28125% {
+    top: 0;
+    left: 200px;
+  }
+  100% {
+    top: 100px;
+    left: 200px;
+  }
+}
+@-o-keyframes loader1 {
+  0% {
+    top: 0;
+    left: 0px;
+  }
+  7.07106781% {
+    top: 0;
+    left: 100px;
+  }
+  10% {
+    top: 0;
+    left: 200px;
+  }
+  12.24744871% {
+    top: 100px;
+    left: 200px;
+  }
+  14.14213562% {
+    top: 200px;
+    left: 200px;
+  }
+  15.8113883% {
+    top: 200px;
+    left: 100px;
+  }
+  17.32050808% {
+    top: 200px;
+    left: 0px;
+  }
+  18.70828693% {
+    top: 100px;
+    left: 0px;
+  }
+  20% {
+    top: 0;
+    left: 0px;
+  }
+  20.85714286% {
+    top: 0;
+    left: 100px;
+  }
+  21.71428571% {
+    top: 0;
+    left: 200px;
+  }
+  22.57142857% {
+    top: 100px;
+    left: 200px;
+  }
+  23.42857143% {
+    top: 200px;
+    left: 200px;
+  }
+  24.28571429% {
+    top: 200px;
+    left: 100px;
+  }
+  25.14285714% {
+    top: 200px;
+    left: 0px;
+  }
+  26% {
+    top: 100px;
+    left: 0px;
+  }
+  26.85714286% {
+    top: 0;
+    left: 0px;
+  }
+  27.71428571% {
+    top: 0;
+    left: 100px;
+  }
+  28.57142857% {
+    top: 0;
+    left: 200px;
+  }
+  29.42857143% {
+    top: 100px;
+    left: 200px;
+  }
+  30.28571429% {
+    top: 200px;
+    left: 200px;
+  }
+  31.14285714% {
+    top: 200px;
+    left: 100px;
+  }
+  32% {
+    top: 200px;
+    left: 0px;
+  }
+  32.85714286% {
+    top: 100px;
+    left: 0px;
+  }
+  33.71428571% {
+    top: 0;
+    left: 0px;
+  }
+  34.57142857% {
+    top: 0;
+    left: 100px;
+  }
+  35.42857143% {
+    top: 0;
+    left: 200px;
+  }
+  36.28571429% {
+    top: 100px;
+    left: 200px;
+  }
+  37.14285714% {
+    top: 200px;
+    left: 200px;
+  }
+  38% {
+    top: 200px;
+    left: 100px;
+  }
+  38.85714286% {
+    top: 200px;
+    left: 0px;
+  }
+  39.71428571% {
+    top: 100px;
+    left: 0px;
+  }
+  40.57142857% {
+    top: 0;
+    left: 0px;
+  }
+  41.42857143% {
+    top: 0;
+    left: 100px;
+  }
+  42.28571429% {
+    top: 0;
+    left: 200px;
+  }
+  43.14285714% {
+    top: 100px;
+    left: 200px;
+  }
+  44% {
+    top: 200px;
+    left: 200px;
+  }
+  44.85714286% {
+    top: 200px;
+    left: 100px;
+  }
+  45.71428571% {
+    top: 200px;
+    left: 0px;
+  }
+  46.57142857% {
+    top: 100px;
+    left: 0px;
+  }
+  47.42857143% {
+    top: 0;
+    left: 0px;
+  }
+  48.28571429% {
+    top: 0;
+    left: 100px;
+  }
+  49.14285714% {
+    top: 0;
+    left: 200px;
+  }
+  50% {
+    top: 100px;
+    left: 200px;
+  }
+  50.78125% {
+    top: 200px;
+    left: 200px;
+  }
+  53.125% {
+    top: 200px;
+    left: 100px;
+  }
+  57.03125% {
+    top: 200px;
+    left: 0px;
+  }
+  62.5% {
+    top: 100px;
+    left: 0px;
+  }
+  69.53125% {
+    top: 0;
+    left: 0px;
+  }
+  78.125% {
+    top: 0;
+    left: 100px;
+  }
+  88.28125% {
+    top: 0;
+    left: 200px;
+  }
+  100% {
+    top: 100px;
+    left: 200px;
   }
 }

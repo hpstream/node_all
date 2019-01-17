@@ -5,7 +5,7 @@ img {
     top: 0;
     left: 0;
     animation-name: loader1;
-    animation-duration:4s;
+    animation-duration:5s;
     animation-timing-function:steps(1,end);
     animation-iteration-count: 1;
     /* animation-direction */
@@ -44,28 +44,29 @@ img {
 // ); 
 // =========================
 
-.generickeyframe(@name;@framelist;@time){ 
+.generickeyframe(@name;@framelist;@time;@position:0){ 
+    @listlength:length(@framelist) ;
     @length:length(@framelist) * @time ;
-    @keyframes @name{ 
-    .loop-framelist(@index) when (@index <= @length){ 
-        .mixin (@index) when (@index<=8){
-            @framepos: 20/sqrt(8) * sqrt(@index - 1) * 1%; 
+    @alllength: length(@framelist) * @time + @position ;
+    .loop-framelist(@index) when (@index <= @alllength){ 
+        .mixin (@index) when (@index<=@listlength){
+            @framepos: 20/sqrt(@listlength) * sqrt(@index) * 1%; 
+            @current: mod(@index, length(@framelist)) + 1;
+            @{framepos}{ 
+                @props: extract(@framelist, @current); 
+                @props(); 
+            } 
+        }
+        .mixin (@index) when (@index<=(@alllength - @listlength)) and (@index>@listlength) {
+            @framepos: 20 + 30 /(@alllength - 2*@listlength) * (@index - @listlength) * 1%; 
             @cuutent: mod(@index, length(@framelist)) + 1;
             @{framepos}{ 
                 @props: extract(@framelist, @cuutent); 
                 @props(); 
             } 
         }
-        .mixin (@index) when (@index<24) and (@index>8) {
-            @framepos: 20 + 20 /16 * (@index - 8) * 1%; 
-            @cuutent: mod(@index, length(@framelist)) + 1;
-            @{framepos}{ 
-                @props: extract(@framelist, @cuutent); 
-                @props(); 
-            } 
-        }
-        .mixin (@index) when (@index>=24){
-            @framepos: 40 + 60 / 81 * pow(@index - 24,2)  * 1%; 
+        .mixin (@index) when (@index>(@alllength - @listlength)){
+            @framepos: 50 + 50 /pow((@listlength),2) * pow((@index - (@alllength - @listlength)),2)  * 1%; 
             @cuutent: mod(@index, length(@framelist)) + 1;
             @{framepos}{ 
                 @props: extract(@framelist, @cuutent); 
@@ -75,18 +76,38 @@ img {
         .mixin(@index);
         .loop-framelist(@index+1); 
     } 
-    .loop-framelist(1); 
+    @keyframes @name{ 
+        .loop-framelist(0); 
     } 
-} 
+    @-moz-keyframes  @name{ 
+        .loop-framelist(0); 
+    } 
+    @-webkit-keyframes  @name{ 
+        .loop-framelist(0); 
+    } 
+    @-o-keyframes  @name{ 
+        .loop-framelist(0); 
+    } 
+}
+// {top: 0; left: 0px;},
+// {top: 0; left: 100px;},
+// {top: 0; left: 200px;},
+// {top: 100px; left: 200px;},
+// {top: 200px; left: 200px;},
+// {top: 200px; left: 100px;},
+// {top: 200px; left: 0px;},
+// {top: 100px; left: 0px;};
+@position1:{top: 0; left: 0px;};
+@position2:{top: 0; left: 100px;};
+@position3:{top: 0; left: 200px;};
+@position4:{top: 100px; left: 200px;};
+@position5:{top: 200px; left: 200px;};
+@position6:{top: 200px; left: 100px;};
+@position7:{top: 200px; left: 0px;};
+@position8:{top: 100px; left: 0px;};
+@position:@position1,@position2,@position3,@position4,@position5,@position6,@position7,@position8;
 .generickeyframe(loader1; 
-    {top: 0; left: 0px;},
-    {top: 0; left: 100px;},
-    {top: 0; left: 200px;},
-    {top: 100px; left: 200px;},
-    {top: 200px; left: 200px;},
-    {top: 200px; left: 100px;},
-    {top: 200px; left: 0px;},
-    {top: 100px; left: 0px;};
-    4
+    @position;
+    6;
+    3
 ); 
-    
