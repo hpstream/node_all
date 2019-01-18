@@ -1,0 +1,73 @@
+
+@mixin qianzhuai($animationname,$name){
+    #{$animationname}: $name;
+    -moz-#{$animationname}: $name;
+      -o-#{$animationname}: $name;
+     -ms-#{$animationname}: $name;
+    -webkit-#{$animationname}: $name;
+}
+img {
+    position: absolute;
+    width: 100px;
+    top: 0;
+    left: 0;
+    // animation-name: loader1;
+    @include qianzhuai(animation-name,loader1);
+    @include qianzhuai(animation-duration,5s);
+    // animation-duration:5s;
+    animation-timing-function:steps(1,end);
+    animation-iteration-count: 1;
+    /* animation-direction */
+    /* animation-fill-mode	 */
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+
+@mixin transform($transforms) {
+        transform: $transforms;
+    -moz-transform: $transforms;
+      -o-transform: $transforms;
+     -ms-transform: $transforms;
+ -webkit-transform: $transforms;
+}
+@function sqrt ($x) {
+    @if $x < 0 {
+        @warn "Argument for `sqrt()` must be a positive number.";
+        @return null;
+    }
+    $ret: 1;
+    @for $i from 1 through 24 {
+        $ret: $ret - ($ret * $ret - $x) / (2 * $ret);
+    }
+    @return $ret;
+}
+// translate
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+$positions: (-100%,-100%) (0%,-100%) (100%,-100%) (100%,0%) (100%,100%) (0%,100%) (-100%,100%) (-100%,0%);
+// rotate
+@mixin allrotate($name,$positions,$rotatetimes:4, $stopposition:0) {
+    $arrrlen: length($positions);
+    $alllength: length($positions) * $rotatetimes + $stopposition ;
+    @keyframes #{$name}{
+        @for $i from 0 through ($arrrlen *$rotatetimes + $stopposition) {
+            $item: nth($positions, ($i % $arrrlen)+1);
+            $first: nth($item, 1);
+            $second: nth($item,2);
+            $index:1;
+            @if $i <= $arrrlen {  
+                $index:20/sqrt($arrrlen)*sqrt(($i));
+              
+            }@else if $i <= ($alllength - $arrrlen) {   
+                $index:20 + 30/($alllength - $arrrlen) * ($i - $arrrlen) ;     
+            }@else{
+                $index:50 + 50/($arrrlen*$arrrlen)* (($i - ($alllength - $arrrlen))*($i - ($alllength - $arrrlen)))
+            }
+            #{$index}% {
+                @include translate($first, $second);
+             }          
+          }
+    }
+}
+@include allrotate('ww',$positions,4,0);
