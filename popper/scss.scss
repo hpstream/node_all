@@ -13,7 +13,7 @@ img {
     left: 0;
     // animation-name: loader1;
     @include qianzhuai(animation-name,loader1);
-    @include qianzhuai(animation-duration,5s);
+    @include qianzhuai(animation-duration,6s);
     // animation-duration:5s;
     animation-timing-function:steps(1,end);
     animation-iteration-count: 1;
@@ -47,27 +47,36 @@ img {
 }
 $positions: (-100%,-100%) (0%,-100%) (100%,-100%) (100%,0%) (100%,100%) (0%,100%) (-100%,100%) (-100%,0%);
 // rotate
-@mixin allrotate($name,$positions,$rotatetimes:4, $stopposition:0) {
+@mixin calc($positions,$rotatetimes,$stopposition) {
     $arrrlen: length($positions);
     $alllength: length($positions) * $rotatetimes + $stopposition ;
-    @keyframes #{$name}{
-        @for $i from 0 through ($arrrlen *$rotatetimes + $stopposition) {
-            $item: nth($positions, ($i % $arrrlen)+1);
-            $first: nth($item, 1);
-            $second: nth($item,2);
-            $index:1;
-            @if $i <= $arrrlen {  
-                $index:20/sqrt($arrrlen)*sqrt(($i));
-              
-            }@else if $i <= ($alllength - $arrrlen) {   
-                $index:20 + 30/($alllength - $arrrlen) * ($i - $arrrlen) ;     
-            }@else{
-                $index:50 + 50/($arrrlen*$arrrlen)* (($i - ($alllength - $arrrlen))*($i - ($alllength - $arrrlen)))
-            }
-            #{$index}% {
-                @include translate($first, $second);
-             }          
-          }
-    }
+    @for $i from 0 through ($arrrlen *$rotatetimes + $stopposition) {
+        $item: nth($positions, ($i % $arrrlen)+1);
+        $first: nth($item, 1);
+        $second: nth($item,2);
+        $index:1;
+        @if $i <= $arrrlen {  
+            $index:20/sqrt($arrrlen)*sqrt(($i));
+          
+        }@else if $i <= ($alllength - $arrrlen) {   
+            $index:20 + 25/($alllength - 2*$arrrlen) * ($i - $arrrlen) ;     
+        }@else{
+            $index:45 + 55/($arrrlen*$arrrlen)* (($i - ($alllength - $arrrlen))*($i - ($alllength - $arrrlen)))
+        }
+        #{$index}% {
+            @include translate($first, $second);
+         }          
+      }
 }
-@include allrotate('ww',$positions,4,0);
+@mixin allrotate($name,$positions,$rotatetimes:4, $stopposition:0) {
+   
+    @keyframes #{$name}{
+        @include calc($positions,$rotatetimes, $stopposition);
+    }
+    // @-o-keyframes #{$name}{
+    //     @include calc($positions,$rotatetimes, $stopposition);
+    // }
+
+}
+
+@include allrotate('loader1',$positions,6,6);
