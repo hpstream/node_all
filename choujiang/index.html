@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style lang="">
+  .flex{
+  display: flex;
+}
+.flex>div{
+  height: 100px;
+  width: 100px;
+}
+.flex>.ww{
+height: 100px;
+width: 200px;
+}
+.bg {
+  background:red;
+}
+</style>
+
+<body>
+
+  <div id='app'>
+    <div class='flex'>
+      <div v-text='josn[0].name' :class="{'bg':index == josn[0].id}"></div>
+      <div v-text='josn[1].name' :class="{'bg':index == josn[1].id}"></div>
+      <div v-text='josn[2].name' :class="{'bg':index == josn[2].id}"></div>
+      <div v-text='josn[3].name' :class="{'bg':index == josn[3].id}"></div>
+    </div>
+    <div class='flex'>
+      <div v-text='josn[9].name' :class="{'bg':index == josn[9].id}"></div>
+      <div class='ww'>cddc</div>
+
+      <div v-text='josn[4].name' :class="{'bg':index == josn[4].id}"></div>
+    </div>
+    <div class='flex'>
+      <div v-text='josn[8].name' :class="{'bg':index == josn[8].id}"></div>
+      <div v-text='josn[7].name' :class="{'bg':index == josn[7].id}"></div>
+      <div v-text='josn[6].name' :class="{'bg':index == josn[6].id}"></div>
+      <div v-text='josn[5].name' :class="{'bg':index == josn[5].id}"></div>
+    </div>
+
+  </div>
+
+</body>
+<script src="https://cdn.bootcss.com/vue/2.6.8/vue.min.js"></script>
+<script src="./index.js" type="module"></script>
+
+</html>
