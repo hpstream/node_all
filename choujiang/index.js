@@ -23,7 +23,7 @@ var app = new Vue({
     
   },
 })
-var luckdraw = new luckDraw(josn, rotateDir,3);
+var luckdraw = new luckDraw(josn, rotateDir,3,9);
 // console.log(luckdraw);
 var index = 0;
 luckdraw.run(2,function(params) {

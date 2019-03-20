@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+   *{
+     margin: 0;
+     padding: 0;
+   }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+</body>
+<script src="https://unpkg.com/spritejs/dist/spritejs.min.js"></script>
+<script>
+  const imgUrl = 'https://s5.ssl.qhres.com/static/ec9f373a383d7664.svg'
+  const { Scene, Sprite } = spritejs;
+  const paper = new Scene('#container', { viewport: ['auto', 'auto']})
+
+  const robot = new Sprite('https://p5.ssl.qhimg.com/t01c33383c0e168c3c4.png')
+
+  robot.attr({
+    anchor: [0, 0.5],
+    pos: [0, 0],
+  })
+
+  robot.animate([
+    { pos: [0, 0] },
+    { pos: [0, 300] },
+    { pos: [2700, 300] },
+    { pos: [2700, 0] },
+  ], {
+      duration: 5000,
+      iterations: Infinity,
+      direction: 'alternate',
+    })
+  paper.layer().appendChild(robot)
+</script>
+</html>

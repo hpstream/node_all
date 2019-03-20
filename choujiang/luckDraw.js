@@ -47,11 +47,11 @@ export class luckDraw {
      this.running(currentObj);
     this.myReq = requestAnimationFrame(step);
     function step() {
-      current++;
+      // current++;
       // 加速环节
       if (counter < addSpeed) {
-        if (current < _this.defaultSpeed - counter) {
-          current++;
+        if (current < Math.pow(_this.defaultSpeed - counter,2)) {
+          current = current + _this.defaultSpeed/2;
         } else {
           current = 0;
           // 往前移动一个；
@@ -75,8 +75,8 @@ export class luckDraw {
       }
       // 减速环节
       if (counter >= reduceSpeed && counter < allCount) {
-        if (current < (_this.defaultSpeed - (allCount - counter))) {
-          current++;
+        if (Math.sqrt(current) <= (_this.defaultSpeed - (allCount - counter))) {
+          current = current+2;
         } else {
           // 计数清零
           current = 0;
