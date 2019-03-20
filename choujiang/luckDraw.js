@@ -50,7 +50,7 @@ export class luckDraw {
       // current++;
       // 加速环节
       if (counter < addSpeed) {
-        if (current < Math.pow(_this.defaultSpeed - counter,2)) {
+        if (current < Math.pow(_this.defaultSpeed - coun ter,2)) {
           current = current + _this.defaultSpeed/2;
         } else {
           current = 0;
