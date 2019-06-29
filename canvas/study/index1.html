@@ -1,33 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        html,body{
+        html,
+        body {
             height: 100%;
             overflow: hidden;
         }
-        body{
+
+        body {
             margin: 0;
             padding: 0;
         }
     </style>
 </head>
 <script src="../js/canvas.js"></script>
+
 <body>
     <canvas id='circle'></canvas>
 </body>
 <script>
-
     // 小球自由落体，并反弹，继续下落。
-    var mgCans = Canvas('circle',window.innerWidth,window.innerHeight);
+    var mgCans = Canvas('circle', window.innerWidth, window.innerHeight);
+    var {
+        brush
+    } = mgCans;
 
-   
-    mgCans.arc(50, 50, 50, 0, 2*Math.PI , false); 
+    brush.beginPath();
+    // mgCans.arc(50, 50, 50, 0, 2*Math.PI , false);
+    // [100,100],
+    // [200,100],
+    // [,100],
+    var path = [
+        [100, 100],
+        [100, 200],
+        [200, 200],
+        [200, 100],
+        [100, 100]
+    ]
+    path.forEach((arr, index) => {
+        // console.log(path[index+1]);
+        brush.beginPath();
+        brush.strokeStyle = "black";
+        // 第一个点
+        if (index == 0) {
+            brush.moveTo(path[index][0], path[index][1]);
+            brush.lineTo(
+                (path[index][0] + path[index + 1][0]) / 2,
+                (path[index][1] + path[index + 1][1]) / 2
+            );
+        }
+        // 中间点
+        if (index < path.length-1 && index>0) {
+            brush.moveTo(
+                (path[index - 1][0] + path[index][0]) / 2,
+                (path[index - 1][1] + path[index][1]) / 2
+            );
+            brush.quadraticCurveTo(
+                Math.floor(path[index][0]),//控制点
+                Math.floor(path[index][1]),//控制点
+                Math.floor((path[index][0] + path[index + 1][0]) / 2),
+                Math.floor((path[index][1] + path[index + 1][1]) / 2)
+            );
+            
+        }
+        // 最后一个点
+        if(index >= path.length-1){
+             brush.strokeStyle = "pink";
+             brush.moveTo(
+             (path[index - 2][0] + path[index-1][0]) / 2,
+             (path[index - 2][1] + path[index-1][1]) / 2
+             );
+             brush.quadraticCurveTo(
+             Math.floor(path[index-1][0]),
+             Math.floor(path[index-1][1]),
+             Math.floor(path[index][0]),
+             Math.floor(path[index][1])
+             );
+        }
 
+        brush.stroke();
+        brush.closePath();
+        //  正常情况
+        brush.beginPath();
+        brush.strokeStyle = "blue";
+        if(path[index + 1]){
+            brush.moveTo(path[index][0], path[index][1]);
+            brush.lineTo(path[index+1][0], path[index+1][1]);
+        }
+        brush.stroke();
+        brush.closePath();
+    })
 
+    // window.requestAnimationFrame(step);
+    // function step(params) {
+    //     console.log(2)
+    // }
+    // brush.moveTo(100,100);   
+    // // brush.lineTo(200,200);
+    // // brush.lineTo(300,100);
+    // brush.quadraticCurveTo(
+    //     200,200,
+    //     150,150
+    // );
+    // brush.stroke();
+    // brush.closePath();
+    // brush.moveTo(200,200);
+    // brush.quadraticCurveTo(
+    //     300,100,
+    //     250,150
+    //  );
+    // brush.stroke();
+    // brush.closePath();
 </script>
+
 </html>
