@@ -24,7 +24,6 @@ function Canvas(id,width,height){
     }
    
 }
-
 Canvas.prototype.arc =function(x, y, r, begin, end, direction){
     var that = this,
     posX = x,
