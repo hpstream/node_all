@@ -99,3 +99,32 @@ class DrawingBoard {
     // this.ctx.clearRect(0, 0, canvasWidth, canvasWidth);
   }
 }
+
+
+
+
+
+
+
+class loopEvents{
+  constructor(data){
+    this.data = [];
+    this.index = 0;
+  }
+  run(callback){
+    this.callback = callback ;
+    
+   
+    let next = ()=> {
+      if (this.index < this.data.length) {
+        this.callback(this.data[this.index++], this.next);
+      }
+    }
+    next();
+  }
+  
+}
+
+run(function(path,next){
+  
+})
