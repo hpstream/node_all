@@ -2,18 +2,17 @@ var https = require('https');
 var Stream = require('stream').Transform;
 var fs = require('fs');
 var path = require('path');
-var orgin = 'https://qiniustatic.wodidashi.com/h5/about-wb/';
+var orgin = 'https://qiniustatic.wodidashi.com/h5/app/qq-group/';
 var arr = [
-'logo'
+'qq-group.png',
+'copy.png'
 ];
-
-var ext ='.png';
 for (var i = 0; i < arr.length; i++) {
   downImage(arr[i]);
 }
 
 function downImage(params) {
-  https.request(orgin + params + ext, function (response) {
+  https.request(orgin + params, function (response) {
     var data = new Stream();
 
     response.on('data', function (chunk) {
@@ -21,7 +20,7 @@ function downImage(params) {
     });
 
     response.on('end', function () {
-      fs.writeFileSync(__dirname+'/image/' + params + ext, data.read());
+      fs.writeFileSync(__dirname+'/image/' + params , data.read());
     });
   }).end();
 }
