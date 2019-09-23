@@ -4,7 +4,9 @@ module.exports = postcss.plugin('postcss-pxToRem', function (options) {
   var defaultObj = {
     rootSize: '37.5',
     noTransformFlag: '-no-',
-    toFixed: 6
+    toFixed: 6,
+    whiteTagList: [],
+    whiteSelectorList: []
   };
   return function (root, result) {
     // 判断第一个节点是不是 comment 节点
@@ -27,14 +29,21 @@ module.exports = postcss.plugin('postcss-pxToRem', function (options) {
 
     regobj = Object.assign(defaultObj, regobj);
     root.walkRules(function (rules, i) {
+      var {
+        rootSize,
+        noTransformFlag,
+        toFixed,
+        whiteTagList,
+        whiteSelectorList
+      } = regobj;
+      if (whiteSelectorList.indexOf(rules.selector) >= 0) {
+        return;
+      }
+
       rules.nodes.forEach((rule, j) => {
         var type = rule.type;
         var value = rule.value;
-        var {
-          rootSize,
-          noTransformFlag,
-          toFixed
-        } = regobj;
+        var prop = rule.prop;
         if (type !== 'decl') { // 获取相关px
           return;
         }
@@ -43,7 +52,12 @@ module.exports = postcss.plugin('postcss-pxToRem', function (options) {
         if (rules.nodes[j + 1] && rules.nodes[j + 1].type === 'comment' && (rules.nodes[j + 1].text === noTransformFlag)) {
           return;
         }
+        // 如果有不想转rem标签,
+        if (whiteTagList.indexOf(prop) >= 0) {
+          return;
+        }
 
+        // 转成rem
         var newvalue = value.replace(pxreg, (input, val) => {
           return `${(val / rootSize).toFixed(toFixed)}rem`;
         });
