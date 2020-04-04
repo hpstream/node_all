@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,25 +12,50 @@
     --arcColor: #8266ff;
     height: var(--elunit);
     width: var(--elunit);
-    background:url("../test.png");
-    --background-canvas:(ctx, geom)=> {
+    background: url("../test.png");
+
+    --background-canvas: (ctx, geom)=> {
       ctx.strokeStyle=`var(--arcColor)`;
       ctx.lineWidth=2;
       ctx.beginPath();
       ctx.arc(200, 200, 50, 0, 2*Math.PI);
       ctx.stroke();
       ctx.closePath();
-    };
+    }
+
+    ;
     background: paint(background-canvas);
   }
+
+  .main{
+    width: 300px;
+    position: relative;
+  }
+  .aside{
+    width: 100px;
+    height: 150px;
+    float: left;
+    background: #666;
+  }
+  .main{
+    /* overflow: hidden; */
+    /* display: table; */
+    height: 200px;
+    background: #fcc;
+  }
 </style>
+
 <body>
 
   <div class='el'></div>
-  
+  <div class='main'>
+    <div class='aside'></div>
+    <div class='main'></div>
+  </div>
 </body>
 
 <script>
-CSS.paintWorklet.addModule('./arc.js')
+  CSS.paintWorklet.addModule('./arc.js')
 </script>
+
 </html>
