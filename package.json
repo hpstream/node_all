@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/hpstream/node_all#readme",
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.1",
     "jquery": "^3.2.1",
+    "node-notifier": "^7.0.1",
     "request": "^2.81.0",
+    "selenium-webdriver": "^4.0.0-alpha.7",
     "socket.io": "^2.0.4",
     "tree": "^0.1.3"
   },
