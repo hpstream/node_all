@@ -1,0 +1,94 @@
+<script>
+  const arr = [{
+      name: '商品01',
+      price: 123.0,
+      sales: 123,
+      postage: 19
+    },
+    {
+      name: '商品02',
+      price: 124.0,
+      sales: 123,
+      postage: 0
+    },
+    {
+      name: '商品03',
+      price: 123.0,
+      sales: 133,
+      postage: 29
+    },
+    {
+      name: '商品04',
+      price: 125.0,
+      sales: 123,
+      postage: 9
+    },
+    {
+      name: '商品05',
+      price: 123.0,
+      sales: 143,
+      postage: 19
+    },
+      {
+      name: '商品06',
+      price: 123.0,
+      sales: 133,
+      postage: 28
+      }
+  ];
+
+  function comparator(o1, o2) {
+    // if (o1.price - o2.price > 0 ) {
+    //   return -1;
+    // }
+
+    //  if (o1.price - o2.price == 0 ) {
+    //    if(o1.sales - o2.sales > 0){
+    //      return -1
+    //    }
+    //  }
+
+    var i = 0;
+    while (i < comparator.tem.length) {
+      var value = comparator.tem[i](o1, o2);
+      if (value > 0) {
+        return -1
+      }
+      if (value === 0) {
+        i++;
+      }
+      if (value < 0) {
+
+        return 1;
+      }
+
+    }
+
+    // for (let i = 0; i < comparator.tem.length; i++) {
+    //   if (comparator.tem[i](o1, o2) > 0) {
+    //     return -1
+    //   }
+
+    //   if (o1.price - o2.price == 0) {
+    //     if (o1.sales - o2.sales > 0) {
+    //       return -1
+    //     }
+    //   }
+    // }
+
+  }
+  comparator.thenComparing = function (callback) {
+    if (!this.tem) {
+      this.tem = []
+    }
+    this.tem.push(callback)
+  }
+
+  comparator.thenComparing((o1, o2) => o1.price - o2.price)
+  comparator.thenComparing((o1, o2) => o1.sales - o2.sales)
+  comparator.thenComparing((o1, o2) => o1.postage - o2.postage)
+
+
+  var arr1 = arr.sort(comparator)
+  console.log(arr1)
+</script>
